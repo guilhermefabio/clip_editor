@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "sources": [
+    "clipe_1.788.818.119.254.mp4"
+  ],
+  "output": "shorts_bodycam_lote17",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 2,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "71_AUTO",
+      "title": "1",
+      "tag": "4",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 7,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 15.0s, corte 1/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 10.333,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 15.0s, corte 2/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 13.667,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 15.0s, corte 3/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 17,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 15.0s, corte 4/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 20.333,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 15.0s, corte 5/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 23.667,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 15.0s, corte 6/6."
+        }
+      ]
+    },
+    {
+      "name": "72_AUTO",
+      "title": "2",
+      "tag": "3",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 71.237,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 88.7s, corte 1/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 74.571,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 88.7s, corte 2/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 77.904,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 88.7s, corte 3/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 81.237,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 88.7s, corte 4/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 84.571,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 88.7s, corte 5/6."
+        },
+        {
+          "file": "clipe_1.788.818.119.254.mp4",
+          "start": 87.904,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: janela quente em 88.7s, corte 6/6."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+VieirasPlay — identidade FPS
+
+Ferramenta: geração de imagens integrada (image_gen); sem CLI/API externa.
+O banner foi exportado em JPG 2560x1440 com FFmpeg; o design foi criado e ajustado com image_gen.
+
+ARQUIVOS FINAIS
+perfil_vieirasplay.png — foto de perfil quadrada, preparada para recorte circular.
+banner_vieirasplay_2560x1440.jpg — banner, com conteúdo principal dentro da área central para celular.
+
+Para aplicar: YouTube Studio > Personalização > Perfil. Envie a foto e o banner, confira os recortes e publique as alterações.
+Especificações de referência: https://support.google.com/youtube/answer/10456525?hl=pt-BR
+
+PROMPT — PERFIL
+Use case: logo-brand.
+Asset type: final square YouTube profile image for the gaming channel VieirasPlay.
+Create ONE finished 1024 x 1024 square raster image, not a presentation or mockup.
+A striking original VP monogram for an FPS gaming creator. Design interlocking uppercase V and P with bold angular geometric strokes, a subtle negative-space aiming reticle integrated into the letterform, exceptionally readable as a tiny circular avatar. Premium tactical gaming design with disciplined shapes, much more like a custom motorsport emblem than a generic esports mascot. Gunmetal black background with extremely subtle grain, crisp off-white letter structure and restrained acid-lime green accents consistent with a dark BODYCAM/phonk gaming aesthetic. Small sharp cutouts, precise silhouette, restrained dimension and soft edge lighting, not glossy chrome. The monogram occupies the central 65% of the square, all important geometry contained safely inside the central circular crop with ample breathing room. Centered balanced composition. No characters or skulls. No full channel name, no tagline, no tiny decorative writing, no watermarks, no outer frame, no additional logos. Only the letters VP, integrated into a single strong emblem. High contrast, polished identity asset ready to use.
+
+PROMPT — BANNER
+Use case: logo-brand.
+Asset type: finished YouTube channel banner, landscape 16:9, requested output 2560 x 1440 pixels, at least 2048 x 1152 pixels for upload.
+Create ONE final banner artwork, not a mockup or a collection. The supplied image is a STYLE AND LOGO REFERENCE only; create a new wide composition using that exact distinctive interlocking VP emblem with its lime crosshair.
+Channel: VieirasPlay, focused on FPS gameplay, including BODYCAM. Match the reference's graphite black, worn off-white metal and acid-lime accents. Premium cinematic tactical gaming identity, fine grained industrial texture, restrained atmospheric haze, abstract distant urban FPS environment blended into dark background, very subtle angular targeting graphics at the periphery. Typography sharp, confident, clean, slightly condensed, custom gaming wordmark feel, impeccable readability. Do not add characters or game franchise logos.
+CRITICAL YOUTUBE SAFE AREA: all important content must fit within the middle 58 percent of image width and the middle 24 percent of image height. In the intended 2560 x 1440 layout this is approximately x=550..2010 and y=555..885. Place a small matching VP emblem on the left WITHIN this central safe zone (about x=630..880, y=585..845), and place the exact text "VieirasPlay" beside it (about x=980..1950, y=610..765). Wordmark should be strong off-white with a lime accent on Play. Under the wordmark, within the same safe zone, render ONLY the small text "FPS • GAMEPLAYS" (around y=795..835). This center grouping must be complete and visible when the banner is cropped to a thin horizontal strip on phones. Leave generous dark atmospheric space in the entire top and bottom thirds: these are background ONLY. Banner background must bleed edge to edge. No safe-area guides, no colored crop rectangles, no frames, no browser or YouTube interface, no subscription button, no made-up posting schedule, no additional words, no watermark.
+Text verbatim: "VieirasPlay" and "FPS • GAMEPLAYS". Do not change the spelling.
+
+AJUSTE FINAL DO BANNER
+Edit the supplied banner. Preserve the exact VP emblem, the exact text "VieirasPlay" and "FPS • GAMEPLAYS", colors, metallic texture, typeface and tactical industrial atmosphere. Make just ONE layout correction: the whole central group (VP logo + VieirasPlay wordmark + subtitle) is too large for YouTube's phone crop. Reduce that ENTIRE group to 72 percent of its current size and center it at the exact center of the canvas. All of the logo and all text must now be strictly inside x=25% to 75% of total canvas width and y=41% to 59% of total canvas height. This deliberately leaves very broad empty textured atmospheric margins on all four sides. Preserve background filling the whole canvas, extend the existing dark urban texture naturally into the extra space. Do not move individual letters relative to each other, do not restyle anything, no new words. Maintain wide 16:9 aspect ratio, ideally 2560x1440 pixels. One finished image, no safe-area rectangles or mockups. The SMALLER centered lettering is intentional and essential.
+

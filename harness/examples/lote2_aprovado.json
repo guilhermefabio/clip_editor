@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "output": "harness/referencia_renderizada",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+  },
+  "allow_reuse": true,
+  "reuse_reason": "Reprodução de referência do lote explicitamente aprovado; não representa material inédito.",
+  "edits": [
+    {
+      "name": "06_ENCOSTOU_TOMOU",
+      "title": "ENCOSTOU, TOMOU.",
+      "tag": "COMBATE NO GALPÃO",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 57.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.47,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: COMBATE NO GALPÃO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 63.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.52,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: COMBATE NO GALPÃO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 72.4,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: COMBATE NO GALPÃO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 82.2,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.54,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: COMBATE NO GALPÃO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 88.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: COMBATE NO GALPÃO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 83,
+          "beats": 8,
+          "speed": 0.75,
+          "center_x": 0.53,
+          "gamma": 1.08,
+          "replay": true,
+          "note": "Corte da referência visual aprovada pelo usuário: COMBATE NO GALPÃO"
+        }
+      ]
+    },
+    {
+      "name": "07_TUNEL_VERMELHO",
+      "title": "NO ESCURO, SEM RECUAR.",
+      "tag": "TÚNEL VERMELHO",
+      "color": "#FF765D",
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 13.2,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: TÚNEL VERMELHO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 29.5,
+          "beats": 4,
+          "speed": 1.4,
+          "center_x": 0.5,
+          "gamma": 1.22,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: TÚNEL VERMELHO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 43.85,
+          "beats": 12,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.22,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: TÚNEL VERMELHO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 54.2,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.22,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: TÚNEL VERMELHO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 75.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: TÚNEL VERMELHO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 78.85,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: TÚNEL VERMELHO"
+        }
+      ]
+    },
+    {
+      "name": "08_RUINAS_SOB_FOGO",
+      "title": "NÃO DÁ PRA VACILAR.",
+      "tag": "RUÍNAS SOB FOGO",
+      "color": "#DAFF64",
+      "music_start": 3.3333333333333335,
+      "cuts": [
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 104,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 133.2,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 156.8,
+          "beats": 4,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 160.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 170.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 178.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        },
+        {
+          "file": "clipe_1.788.669.667.485.mp4",
+          "start": 182.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: RUÍNAS SOB FOGO"
+        }
+      ]
+    },
+    {
+      "name": "09_DISPUTA_NO_MEZANINO",
+      "title": "PERIGO EM TODO ÂNGULO.",
+      "tag": "DISPUTA NO MEZANINO",
+      "color": "#A7DFFF",
+      "music_start": 6.666666666666667,
+      "cuts": [
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 44.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: DISPUTA NO MEZANINO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 51.1,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: DISPUTA NO MEZANINO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 120.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: DISPUTA NO MEZANINO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 129.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: DISPUTA NO MEZANINO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 137.4,
+          "beats": 12,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: DISPUTA NO MEZANINO"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 143.2,
+          "beats": 4,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: DISPUTA NO MEZANINO"
+        }
+      ]
+    },
+    {
+      "name": "10_ULTIMO_CORREDOR",
+      "title": "CORREDOR SEM RESPIRO.",
+      "tag": "ÚLTIMO CORREDOR",
+      "color": "#DAFF64",
+      "music_start": 10,
+      "cuts": [
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 168,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: ÚLTIMO CORREDOR"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 173.1,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.47,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: ÚLTIMO CORREDOR"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 177.1,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: ÚLTIMO CORREDOR"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 180.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: ÚLTIMO CORREDOR"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 183.84,
+          "beats": 4,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Corte da referência visual aprovada pelo usuário: ÚLTIMO CORREDOR"
+        },
+        {
+          "file": "clipe_1.788.669.685.592.mp4",
+          "start": 179.75,
+          "beats": 12,
+          "speed": 0.65,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": true,
+          "note": "Corte da referência visual aprovada pelo usuário: ÚLTIMO CORREDOR"
+        }
+      ]
+    }
+  ]
+}

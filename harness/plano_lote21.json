@@ -1,0 +1,942 @@
+{
+  "version": 1,
+  "sources": [
+    "2026-09-09 21-01-36.mkv"
+  ],
+  "output": "cliping/lote21",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 12,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "83_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 138.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~160s, corte 1/6 em 138.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 143.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~160s, corte 2/6 em 143.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 147.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~160s, corte 3/6 em 147.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 158.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~160s, corte 4/6 em 158.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 175.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~160s, corte 5/6 em 175.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 178.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~160s, corte 6/6 em 178.8s."
+        }
+      ]
+    },
+    {
+      "name": "84_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 185.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~206s, corte 1/6 em 185.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 189.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~206s, corte 2/6 em 189.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 197.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~206s, corte 3/6 em 197.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 204.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~206s, corte 4/6 em 204.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 213.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~206s, corte 5/6 em 213.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 217.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~206s, corte 6/6 em 217.8s."
+        }
+      ]
+    },
+    {
+      "name": "85_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 268.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~285s, corte 1/6 em 268.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 273.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~285s, corte 2/6 em 273.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 276.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~285s, corte 3/6 em 276.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 283.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~285s, corte 4/6 em 283.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 287.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~285s, corte 5/6 em 287.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 303.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~285s, corte 6/6 em 303.5s."
+        }
+      ]
+    },
+    {
+      "name": "86_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 323.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~341s, corte 1/6 em 323.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 326.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~341s, corte 2/6 em 326.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 330.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~341s, corte 3/6 em 330.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 339.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~341s, corte 4/6 em 339.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 354.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~341s, corte 5/6 em 354.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 360.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~341s, corte 6/6 em 360.5s."
+        }
+      ]
+    },
+    {
+      "name": "87_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 349.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~371s, corte 1/6 em 349.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 364.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~371s, corte 2/6 em 364.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 369.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~371s, corte 3/6 em 369.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 376.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~371s, corte 4/6 em 376.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 379.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~371s, corte 5/6 em 379.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 387.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~371s, corte 6/6 em 387.8s."
+        }
+      ]
+    },
+    {
+      "name": "88_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 419.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~439s, corte 1/6 em 419.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 424.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~439s, corte 2/6 em 424.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 430.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~439s, corte 3/6 em 430.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 437.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~439s, corte 4/6 em 437.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 444.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~439s, corte 5/6 em 444.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 449.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~439s, corte 6/6 em 449.2s."
+        }
+      ]
+    },
+    {
+      "name": "89_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 486.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~504s, corte 1/6 em 486.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 496.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~504s, corte 2/6 em 496.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 502.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~504s, corte 3/6 em 502.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 509.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~504s, corte 4/6 em 509.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 513.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~504s, corte 5/6 em 513.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 518.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~504s, corte 6/6 em 518.8s."
+        }
+      ]
+    },
+    {
+      "name": "90_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 533.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~555s, corte 1/6 em 533.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 547.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~555s, corte 2/6 em 547.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 553.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~555s, corte 3/6 em 553.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 558.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~555s, corte 4/6 em 558.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 562.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~555s, corte 5/6 em 562.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 573.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~555s, corte 6/6 em 573.2s."
+        }
+      ]
+    },
+    {
+      "name": "91_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 578.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~586s, corte 1/6 em 578.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 584.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~586s, corte 2/6 em 584.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 588.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~586s, corte 3/6 em 588.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 594.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~586s, corte 4/6 em 594.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 603.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~586s, corte 5/6 em 603.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 607.67,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~586s, corte 6/6 em 607.7s."
+        }
+      ]
+    },
+    {
+      "name": "92_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 760.67,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~783s, corte 1/6 em 760.7s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 773.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~783s, corte 2/6 em 773.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 778.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~783s, corte 3/6 em 778.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 781.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~783s, corte 4/6 em 781.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 787.163,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~783s, corte 5/6 em 787.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 800.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~783s, corte 6/6 em 800.8s."
+        }
+      ]
+    },
+    {
+      "name": "93_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 939.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~953s, corte 1/6 em 939.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 947.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~953s, corte 2/6 em 947.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 951.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~953s, corte 3/6 em 951.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 955.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~953s, corte 4/6 em 955.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 965.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~953s, corte 5/6 em 965.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 968.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~953s, corte 6/6 em 968.5s."
+        }
+      ]
+    },
+    {
+      "name": "94_AUTO",
+      "title": "1",
+      "tag": "1",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+      },
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 1036.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~1055s, corte 1/6 em 1036.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 1045.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~1055s, corte 2/6 em 1045.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 1053.503,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~1055s, corte 3/6 em 1053.5s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 1061.833,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~1055s, corte 4/6 em 1061.8s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 1066.166,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~1055s, corte 5/6 em 1066.2s."
+        },
+        {
+          "file": "2026-09-09 21-01-36.mkv",
+          "start": 1073.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Auto: regiao quente ~1055s, corte 6/6 em 1073.5s."
+        }
+      ]
+    }
+  ],
+  "versions": {
+    "editor_version": "0.2.0+99cd61d09d",
+    "detector_version": "0.1.0+113b273047",
+    "ranking_model_version": "0.1.0+96a5e7e0c6",
+    "render_config_version": "0.1.0+8e714cd86f"
+  }
+}

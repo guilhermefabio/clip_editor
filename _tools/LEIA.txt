@@ -1,0 +1,8 @@
+ffmpeg.exe e ffprobe.exe (build Windows, ~100 MB cada) não vão pro Git --
+grandes demais e são binários de terceiros, não código do projeto.
+
+Baixe um build estático (ex.: https://www.gyan.dev/ffmpeg/builds/, essential
+ou full build) e coloque ffmpeg.exe e ffprobe.exe soltos nesta pasta.
+studio/config.py e harness/shorts.py esperam exatamente:
+  _tools/ffmpeg.exe
+  _tools/ffprobe.exe

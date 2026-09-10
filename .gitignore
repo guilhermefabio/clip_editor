@@ -1,0 +1,49 @@
+# Este repositório versiona o código (harness/, studio/, scripts) e os
+# registros de plano/histórico em JSON. Gravações, renders, áudio e datasets
+# de treino ficam só localmente -- são grandes, derivados de gameplay, e
+# reprodutíveis a partir do código + do material local em disco.
+
+# --- mídia bruta e renderizada ---
+*.mkv
+*.mp4
+*.wav
+*.mp3
+*.zip
+
+# --- imagens (exceto identidade da marca e prints de calibração, pequenos e curados) ---
+*.jpg
+*.jpeg
+*.png
+!identidade_vieirasplay/*.jpg
+!identidade_vieirasplay/*.png
+!studio/model/kill_refs/*.jpg
+!studio/model/kill_refs/*.jpeg
+!studio/model/kill_refs/*.png
+
+# --- pastas geradas / dados locais de gameplay ---
+/gravacoes/
+/clipes_kill/
+/cliping/
+/frames/
+/melhores_shorts/
+
+# --- studio: cache de features, pesos de modelo, artefatos treinados ---
+/studio/cache/
+/studio/model/*.joblib
+/studio/model/*.pt
+/studio/notebooks/_frames/
+
+# --- binários de terceiros (baixe conforme _tools/LEIA.txt) ---
+/_tools/*.exe
+
+# --- Claude Code (estado local de sessão, não é do projeto) ---
+/.claude/
+
+# --- python / ferramentas / SO ---
+__pycache__/
+*.pyc
+.pytest_cache/
+.pytest_tmp/
+.ipynb_checkpoints/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "approved_reference": "shorts_bodycam_lote2",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_seconds": [15, 20],
+  "width": 1080,
+  "height": 1920,
+  "fps": 60,
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+  },
+  "style": {"color": "#DAFF64", "gamma": 1.08, "dark_gamma": 1.22},
+  "audio": {"game_gain": 0.62, "music_gain": 0.82, "target_lufs": -14, "min_lufs": -15.5, "max_lufs": -12.5, "max_true_peak_db": -1}
+}

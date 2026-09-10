@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "sources": [
+    "2026-09-07 15-00-47.mkv"
+  ],
+  "output": "shorts_bodycam_lote15",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 2,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "69_FLANCO_PELA_LATERAL",
+      "title": "FLANCO PELA LATERAL",
+      "tag": "CASA / PISTOLA",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+      },
+      "music_start": 0.0,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2354.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Contato na lateral sob andaimes, pistola entre coberturas, recarga e volta pela casa ate o disparo na janela."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2358,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Contato na lateral sob andaimes, pistola entre coberturas, recarga e volta pela casa ate o disparo na janela."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2362,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Contato na lateral sob andaimes, pistola entre coberturas, recarga e volta pela casa ate o disparo na janela."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2368.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Contato na lateral sob andaimes, pistola entre coberturas, recarga e volta pela casa ate o disparo na janela."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2374.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Contato na lateral sob andaimes, pistola entre coberturas, recarga e volta pela casa ate o disparo na janela."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2380.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Contato na lateral sob andaimes, pistola entre coberturas, recarga e volta pela casa ate o disparo na janela."
+        }
+      ]
+    },
+    {
+      "name": "70_ULTIMA_INVASAO",
+      "title": "ULTIMA INVASAO",
+      "tag": "CASA / FINAL",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 1.7592857142857141,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2402.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Disparo na janela, entrada pela cozinha e sala; saida para a varanda com inimigos muito proximos, encerrando antes do menu."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2406,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Disparo na janela, entrada pela cozinha e sala; saida para a varanda com inimigos muito proximos, encerrando antes do menu."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2409.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Disparo na janela, entrada pela cozinha e sala; saida para a varanda com inimigos muito proximos, encerrando antes do menu."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2413,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Disparo na janela, entrada pela cozinha e sala; saida para a varanda com inimigos muito proximos, encerrando antes do menu."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2416.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Disparo na janela, entrada pela cozinha e sala; saida para a varanda com inimigos muito proximos, encerrando antes do menu."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 2420,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Disparo na janela, entrada pela cozinha e sala; saida para a varanda com inimigos muito proximos, encerrando antes do menu."
+        }
+      ]
+    }
+  ]
+}

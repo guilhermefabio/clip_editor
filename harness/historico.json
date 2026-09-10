@@ -1,0 +1,1192 @@
+{
+  "version": 1,
+  "sources": {
+    "bff9e1297e9f0dd90a857459d9eb0c2738f374be13b5abc719eb6f7a332b707d": {
+      "files": [
+        "clipe_1.788.619.696.170.mp4",
+        "clipe_1.788.669.675.387.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 56.2,
+          "end": 59.400000000000006,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 62,
+          "end": 66.8,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 66,
+          "end": 69.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 75.6,
+          "end": 80.08,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 80.25,
+          "end": 85.05,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 80.8,
+          "end": 84.39999999999999,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "01_FLORESTA_SEM_SAIDA",
+          "start": 86.6,
+          "end": 88.19999999999999,
+          "replay": false
+        }
+      ]
+    },
+    "7f9511ed71cd3a9d0618bbb38fa2267db55687e021ce80e9decc80c62b3190ce": {
+      "files": [
+        "clipe_1.788.666.028.140.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam",
+          "short": "02_VIROU_A_ESQUINA",
+          "start": 97,
+          "end": 101.8,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "02_VIROU_A_ESQUINA",
+          "start": 104,
+          "end": 108.8,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "02_VIROU_A_ESQUINA",
+          "start": 509,
+          "end": 513.8,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "02_VIROU_A_ESQUINA",
+          "start": 514,
+          "end": 517.2,
+          "replay": false
+        }
+      ]
+    },
+    "09c3aaf707dedabe0094e57d43b8e90bc5e13b6599cf0bbd863ba7d9543390f0": {
+      "files": [
+        "clipe_1.788.666.071.210.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam",
+          "short": "03_HOSPITAL_EM_GUERRA",
+          "start": 109.3,
+          "end": 114.1,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "03_HOSPITAL_EM_GUERRA",
+          "start": 306.2,
+          "end": 311.0,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "03_HOSPITAL_EM_GUERRA",
+          "start": 318.2,
+          "end": 321.4,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "03_HOSPITAL_EM_GUERRA",
+          "start": 328.2,
+          "end": 333.0,
+          "replay": false
+        }
+      ]
+    },
+    "d36c536bccf18566105330bebeea122cca38c349e96c3da977077840384da3b0": {
+      "files": [
+        "clipe_1.788.666.086.994.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam",
+          "short": "02_VIROU_A_ESQUINA",
+          "start": 67.1,
+          "end": 71.89999999999999,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "02_VIROU_A_ESQUINA",
+          "start": 84.1,
+          "end": 87.3,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "05_PISTOLA_SOB_PRESSAO",
+          "start": 250.3,
+          "end": 255.10000000000002,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "05_PISTOLA_SOB_PRESSAO",
+          "start": 258.1,
+          "end": 262.90000000000003,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "05_PISTOLA_SOB_PRESSAO",
+          "start": 265,
+          "end": 269.8,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "05_PISTOLA_SOB_PRESSAO",
+          "start": 278,
+          "end": 281.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "05_PISTOLA_SOB_PRESSAO",
+          "start": 285.5,
+          "end": 290.3,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "05_PISTOLA_SOB_PRESSAO",
+          "start": 291.1,
+          "end": 294.3,
+          "replay": false
+        }
+      ]
+    },
+    "26ba7549e199550897ea1cbbc4db69fcfab6c84a7b0ccb65af7e5ce98b71befa": {
+      "files": [
+        "clipe_1.788.666.099.033.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 4.4,
+          "end": 9.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 12.5,
+          "end": 17.3,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 20.2,
+          "end": 23.4,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 26.1,
+          "end": 29.3,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 29,
+          "end": 31.4,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 13.1,
+          "end": 17.299999999999997,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "04_ARENA_NO_LIMITE",
+          "start": 34,
+          "end": 35.6,
+          "replay": false
+        }
+      ]
+    },
+    "4f14bd5b3e0462404b4f1e36d42b77eaa97cf48b61a7bbdd6c21154bb3c00f84": {
+      "files": [
+        "clipe_1.788.666.108.219.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam",
+          "short": "03_HOSPITAL_EM_GUERRA",
+          "start": 36.1,
+          "end": 39.300000000000004,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam",
+          "short": "03_HOSPITAL_EM_GUERRA",
+          "start": 401.1,
+          "end": 405.90000000000003,
+          "replay": false
+        }
+      ]
+    },
+    "302aaf2de8b647a3be37c48a3bfbb68719cd356434d8e8683d78e1504fffe02c": {
+      "files": [
+        "clipe_1.788.669.667.485.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "07_TUNEL_VERMELHO",
+          "start": 13.2,
+          "end": 16.53333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "07_TUNEL_VERMELHO",
+          "start": 29.5,
+          "end": 31.833333333333332,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "07_TUNEL_VERMELHO",
+          "start": 43.85,
+          "end": 48.85,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "07_TUNEL_VERMELHO",
+          "start": 54.2,
+          "end": 57.53333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "07_TUNEL_VERMELHO",
+          "start": 75.5,
+          "end": 78.83333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "07_TUNEL_VERMELHO",
+          "start": 78.85,
+          "end": 82.18333333333332,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 104,
+          "end": 107.33333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 133.2,
+          "end": 136.53333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 156.8,
+          "end": 158.46666666666667,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 160.5,
+          "end": 163.83333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 170.3,
+          "end": 173.63333333333335,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 178.8,
+          "end": 182.13333333333335,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "08_RUINAS_SOB_FOGO",
+          "start": 182.8,
+          "end": 186.13333333333335,
+          "replay": false
+        }
+      ]
+    },
+    "93836f21a671e25ae2db98abde6687d60c2bab3faee04454f0e5a07d284353eb": {
+      "files": [
+        "clipe_1.788.669.685.592.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "06_ENCOSTOU_TOMOU",
+          "start": 57.5,
+          "end": 60.833333333333336,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "06_ENCOSTOU_TOMOU",
+          "start": 63.3,
+          "end": 66.63333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "06_ENCOSTOU_TOMOU",
+          "start": 72.4,
+          "end": 75.73333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "06_ENCOSTOU_TOMOU",
+          "start": 82.2,
+          "end": 85.53333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "06_ENCOSTOU_TOMOU",
+          "start": 88.8,
+          "end": 92.13333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "06_ENCOSTOU_TOMOU",
+          "start": 83,
+          "end": 85.5,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "09_DISPUTA_NO_MEZANINO",
+          "start": 44.8,
+          "end": 48.13333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "09_DISPUTA_NO_MEZANINO",
+          "start": 51.1,
+          "end": 54.43333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "09_DISPUTA_NO_MEZANINO",
+          "start": 120.5,
+          "end": 123.83333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "09_DISPUTA_NO_MEZANINO",
+          "start": 129.5,
+          "end": 132.83333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "09_DISPUTA_NO_MEZANINO",
+          "start": 137.4,
+          "end": 142.4,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "09_DISPUTA_NO_MEZANINO",
+          "start": 143.2,
+          "end": 144.86666666666665,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "10_ULTIMO_CORREDOR",
+          "start": 168,
+          "end": 171.33333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "10_ULTIMO_CORREDOR",
+          "start": 173.1,
+          "end": 176.43333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "10_ULTIMO_CORREDOR",
+          "start": 177.1,
+          "end": 180.43333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "10_ULTIMO_CORREDOR",
+          "start": 180.5,
+          "end": 183.83333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "10_ULTIMO_CORREDOR",
+          "start": 183.84,
+          "end": 185.50666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote2",
+          "short": "10_ULTIMO_CORREDOR",
+          "start": 179.75,
+          "end": 183.0,
+          "replay": true
+        }
+      ]
+    },
+    "2d7a6b45bc9bf8d4b110e9b345b19dbd57f46d8a4f4b5d533ed026f3f53e1340": {
+      "files": [
+        "clip_2406770_20260907_133821.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 244.5,
+          "end": 248.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 265,
+          "end": 268.68333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 653.7,
+          "end": 657.4000000000001,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 743.9,
+          "end": 747.5833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 752.9,
+          "end": 755.6666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 265.7,
+          "end": 267.63666666666666,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 244.5,
+          "end": 248.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 265,
+          "end": 268.68333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 653.7,
+          "end": 657.4000000000001,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 743.9,
+          "end": 747.5833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 752.9,
+          "end": 755.6666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "31_CASA_EM_CONFRONTO",
+          "start": 265.7,
+          "end": 267.63666666666666,
+          "replay": true
+        }
+      ]
+    },
+    "8c426efaef689228bbf46fcc70bcd0168cc0ba74aa433e5cd7c9b5fd7003a6d6": {
+      "files": [
+        "clip_2406770_20260907_134452.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 49,
+          "end": 52.25,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 40.6,
+          "end": 43.03333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 94.4,
+          "end": 97.63333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 335.5,
+          "end": 338.75,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 339.7,
+          "end": 342.93333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 342.95,
+          "end": 344.5833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 49.05,
+          "end": 51.885,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 49,
+          "end": 52.25,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 40.6,
+          "end": 43.03333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 94.4,
+          "end": 97.63333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 335.5,
+          "end": 338.75,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 339.7,
+          "end": 342.93333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 342.95,
+          "end": 344.5833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "32_ESCADA_SOB_PRESSAO",
+          "start": 49.05,
+          "end": 51.885,
+          "replay": true
+        }
+      ]
+    },
+    "3fea081ef9c8cf65f69c172b1968e0032381bb96f0860524a9a00c036bbe41b3": {
+      "files": [
+        "clip_2807960_20260906_224756.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 14.5,
+          "end": 18.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 29.5,
+          "end": 32.266666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 61.1,
+          "end": 64.78333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 64.8,
+          "end": 68.5,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 71,
+          "end": 73.76666666666667,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 62,
+          "end": 64.57833333333333,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 14.5,
+          "end": 18.2,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 29.5,
+          "end": 32.266666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 61.1,
+          "end": 64.78333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 64.8,
+          "end": 68.5,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 71,
+          "end": 73.76666666666667,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "33_CONTEINER_SOB_FOGO",
+          "start": 62,
+          "end": 64.57833333333333,
+          "replay": true
+        }
+      ]
+    },
+    "7fd93e0dff39ef76e4a0f10385bafa92352a26917cfcd5d3010ea1b72689a284": {
+      "files": [
+        "clip_2807960_20260906_230303.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 104.2,
+          "end": 107.45,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 516.6,
+          "end": 519.8333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 658.4,
+          "end": 661.65,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 708.5,
+          "end": 711.7333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 744.6,
+          "end": 747.0333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 748.1,
+          "end": 750.5333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 104.3,
+          "end": 106.575,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 104.2,
+          "end": 107.45,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 516.6,
+          "end": 519.8333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 658.4,
+          "end": 661.65,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 708.5,
+          "end": 711.7333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 744.6,
+          "end": 747.0333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 748.1,
+          "end": 750.5333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "34_VILA_EM_COMBATE",
+          "start": 104.3,
+          "end": 106.575,
+          "replay": true
+        }
+      ]
+    },
+    "0687661b9028296aea06aa4d62f6f7201f91955db1380f297b56b7215ea5e593": {
+      "files": [
+        "clip_2807960_20260907_132232.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 418.7,
+          "end": 422.4,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 550.1,
+          "end": 552.8666666666667,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 560.9,
+          "end": 563.6666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 738.1,
+          "end": 741.7833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 744,
+          "end": 747.7,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 783.1,
+          "end": 786.7833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 418.7,
+          "end": 422.4,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 550.1,
+          "end": 552.8666666666667,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 560.9,
+          "end": 563.6666666666666,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 738.1,
+          "end": 741.7833333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 744,
+          "end": 747.7,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote7_bass",
+          "short": "35_ILHA_EM_CHAMAS",
+          "start": 783.1,
+          "end": 786.7833333333333,
+          "replay": false
+        }
+      ]
+    },
+    "450518e4030727bf1c47812e11dd8bb8f1922fca463237be77c6d70ed43e9212": {
+      "files": [
+        "clipe_1.788.797.880.138.mp4"
+      ],
+      "uses": [
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 626.7,
+          "end": 630.0333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 630.2,
+          "end": 633.5333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 633.4,
+          "end": 636.7333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 634.0,
+          "end": 635.1666666666666,
+          "replay": true
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 635.6,
+          "end": 638.9333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 638.0,
+          "end": 640.5,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "36_MULTIKILL_SOCO",
+          "start": 641.7,
+          "end": 645.0333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 88.6,
+          "end": 91.93333333333332,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 90.5,
+          "end": 93.0,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 91.3,
+          "end": 93.8,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 92.2,
+          "end": 95.53333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 93.0,
+          "end": 96.33333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 96.6,
+          "end": 99.1,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "37_PATIO_HOSPITAL",
+          "start": 98.0,
+          "end": 101.33333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 465.0,
+          "end": 468.3333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 467.6,
+          "end": 470.1,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 469.2,
+          "end": 472.5333333333333,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 471.4,
+          "end": 473.9,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 472.6,
+          "end": 475.93333333333334,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 478.0,
+          "end": 480.5,
+          "replay": false
+        },
+        {
+          "batch": "shorts_bodycam_lote8",
+          "short": "38_CACADA_LABIRINTO",
+          "start": 479.0,
+          "end": 482.3333333333333,
+          "replay": false
+        }
+      ]
+    }
+  },
+  "batches": [
+    {
+      "output": "shorts_bodycam",
+      "shorts": [
+        "01_FLORESTA_SEM_SAIDA",
+        "02_VIROU_A_ESQUINA",
+        "03_HOSPITAL_EM_GUERRA",
+        "04_ARENA_NO_LIMITE",
+        "05_PISTOLA_SOB_PRESSAO"
+      ],
+      "imported_from_existing_work": true
+    },
+    {
+      "output": "shorts_bodycam_lote2",
+      "shorts": [
+        "06_ENCOSTOU_TOMOU",
+        "07_TUNEL_VERMELHO",
+        "08_RUINAS_SOB_FOGO",
+        "09_DISPUTA_NO_MEZANINO",
+        "10_ULTIMO_CORREDOR"
+      ],
+      "imported_from_existing_work": true
+    },
+    {
+      "output": "shorts_bodycam_lote7",
+      "shorts": [
+        "31_CASA_EM_CONFRONTO",
+        "32_ESCADA_SOB_PRESSAO",
+        "33_CONTEINER_SOB_FOGO",
+        "34_VILA_EM_COMBATE",
+        "35_ILHA_EM_CHAMAS"
+      ]
+    },
+    {
+      "output": "shorts_bodycam_lote7_bass",
+      "shorts": [
+        "31_CASA_EM_CONFRONTO",
+        "32_ESCADA_SOB_PRESSAO",
+        "33_CONTEINER_SOB_FOGO",
+        "34_VILA_EM_COMBATE",
+        "35_ILHA_EM_CHAMAS"
+      ]
+    },
+    {
+      "output": "shorts_bodycam_lote8",
+      "shorts": [
+        "36_MULTIKILL_SOCO",
+        "37_PATIO_HOSPITAL",
+        "38_CACADA_LABIRINTO"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "trained_at": "2026-09-10 15:36:08",
+  "raw_only": false,
+  "source": "gravacoes brutas + clipes_kill/",
+  "n_kill_clips": 0,
+  "audio_used": true,
+  "n_rows": 12195,
+  "n_pos": 3665,
+  "n_neg": 8530,
+  "n_features": 70,
+  "n_sources": 7,
+  "sources": [
+    {
+      "file": "2026-09-09 21-01-36.mkv",
+      "kind": "gravacao",
+      "pos": 720,
+      "neg": 2160,
+      "cached_only": false
+    },
+    {
+      "file": "clip_2406770_20260907_133821.mp4",
+      "kind": "gravacao",
+      "pos": 53,
+      "neg": 159,
+      "cached_only": false
+    },
+    {
+      "file": "2026-09-07 23-35-48.mkv",
+      "kind": "gravacao",
+      "pos": 373,
+      "neg": 1119,
+      "cached_only": false
+    },
+    {
+      "file": "2026-09-07 15-00-47.mkv",
+      "kind": "gravacao",
+      "pos": 2047,
+      "neg": 4268,
+      "cached_only": true
+    },
+    {
+      "file": "2026-09-07 23-02-03.mkv",
+      "kind": "gravacao",
+      "pos": 302,
+      "neg": 536,
+      "cached_only": false
+    },
+    {
+      "file": "clip_2406770_20260907_134452.mp4",
+      "kind": "gravacao",
+      "pos": 51,
+      "neg": 153,
+      "cached_only": false
+    },
+    {
+      "file": "clipe_1.788.818.119.254.mp4",
+      "kind": "gravacao",
+      "pos": 119,
+      "neg": 135,
+      "cached_only": true
+    }
+  ],
+  "feature_names": [
+    "motion",
+    "center_motion",
+    "brightness",
+    "contrast",
+    "sat_mean",
+    "red_frac",
+    "flash_frac",
+    "dark_frac",
+    "edge_density",
+    "audio_rms",
+    "audio_hi",
+    "audio_lo",
+    "person_count",
+    "person_conf",
+    "person_area",
+    "person_center",
+    "person_area_sum",
+    "hit_center",
+    "friendly_green",
+    "enemy_count",
+    "enemy_area",
+    "enemy_center",
+    "motion_wmax",
+    "motion_wmean",
+    "center_motion_wmax",
+    "center_motion_wmean",
+    "flash_frac_wmax",
+    "flash_frac_wmean",
+    "red_frac_wmax",
+    "red_frac_wmean",
+    "contrast_wmax",
+    "contrast_wmean",
+    "audio_rms_wmax",
+    "audio_rms_wmean",
+    "audio_hi_wmax",
+    "audio_hi_wmean",
+    "audio_lo_wmax",
+    "audio_lo_wmean",
+    "person_count_wmax",
+    "person_count_wmean",
+    "person_conf_wmax",
+    "person_conf_wmean",
+    "person_area_wmax",
+    "person_area_wmean",
+    "person_center_wmax",
+    "person_center_wmean",
+    "person_area_sum_wmax",
+    "person_area_sum_wmean",
+    "hit_center_wmax",
+    "hit_center_wmean",
+    "friendly_green_wmax",
+    "friendly_green_wmean",
+    "enemy_count_wmax",
+    "enemy_count_wmean",
+    "enemy_area_wmax",
+    "enemy_area_wmean",
+    "enemy_center_wmax",
+    "enemy_center_wmean",
+    "flash_frac_spike",
+    "red_frac_spike",
+    "audio_hi_spike",
+    "audio_lo_spike",
+    "person_area_spike",
+    "person_area_sum_spike",
+    "center_motion_spike",
+    "hit_center_spike",
+    "enemy_area_spike",
+    "enemy_count_spike",
+    "idle_flag",
+    "walk_flag"
+  ],
+  "validation": {
+    "scheme": "GroupKFold(5) por fonte",
+    "roc_auc": 0.7129,
+    "avg_precision": 0.5175,
+    "n_holdout": 12195,
+    "precision": 0.509,
+    "recall": 0.522,
+    "f1": 0.515
+  },
+  "suggested_threshold": 0.3,
+  "fps_analysis": 3.0,
+  "top_features": [
+    {
+      "feature": "audio_lo_wmax",
+      "importance": 0.0091
+    },
+    {
+      "feature": "sat_mean",
+      "importance": 0.0088
+    },
+    {
+      "feature": "red_frac_wmax",
+      "importance": 0.0061
+    },
+    {
+      "feature": "flash_frac_wmax",
+      "importance": 0.0049
+    },
+    {
+      "feature": "center_motion_wmax",
+      "importance": 0.0046
+    },
+    {
+      "feature": "center_motion_wmean",
+      "importance": 0.0034
+    },
+    {
+      "feature": "motion_wmax",
+      "importance": 0.0027
+    },
+    {
+      "feature": "red_frac_wmean",
+      "importance": 0.0027
+    },
+    {
+      "feature": "friendly_green_wmax",
+      "importance": 0.0026
+    },
+    {
+      "feature": "motion_wmean",
+      "importance": 0.0024
+    },
+    {
+      "feature": "audio_hi_wmean",
+      "importance": 0.0024
+    },
+    {
+      "feature": "audio_hi_wmax",
+      "importance": 0.0022
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "sha256": "450d43fb97e0776b797e0a279a8d9c9b1de8e2c6397e4957da3de2df77b8461c",
+      "files": [
+        "2026-09-07 15-00-47.mkv"
+      ],
+      "duration": 2438.4,
+      "width": 2560,
+      "height": 1080,
+      "fps": "60/1",
+      "new_content": true,
+      "used_intervals": 0
+    }
+  ]
+}

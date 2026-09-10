@@ -1,0 +1,512 @@
+{
+  "version": 1,
+  "output": "shorts_bodycam_lote5",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "21_NA_PISTOLA",
+      "title": "O FUZIL PAROU. EU NÃO.",
+      "tag": "RUAS / TROCA PARA PISTOLA",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "music": {
+        "file": "shorts_bodycam/projeto/phonk_original_01.wav",
+        "sha256": "e16001296b8a9c52e35c143c11e4f66e0c0c2c1b7fc0e8d33cd1cbe3bf36ef81",
+        "bpm": 150,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade de composição confirmada no script histórico montar.py: BEAT=0.4 s, compassos de 1.6 s; hats a cada 0.2 s. Áudio original preservado."
+      },
+      "cuts": [
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 352.88,
+          "beats": 8,
+          "note": "Primeira rajada na rua lateral.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 353.28,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 356.2,
+          "beats": 4,
+          "note": "Recarga curta sob cobertura.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 365.88,
+          "beats": 8,
+          "note": "Retorno ao disparo depois da recarga.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 366.28,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 375.22,
+          "beats": 8,
+          "note": "Confronto pela coluna.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 375.62,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 378.6,
+          "beats": 8,
+          "note": "Troca para a pistola no mesmo confronto.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 381.9,
+          "beats": 8,
+          "note": "Disparos de pistola mantidos em tempo real.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 385.2,
+          "beats": 8,
+          "note": "Últimos tiros e saída da cobertura.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        }
+      ]
+    },
+    {
+      "name": "22_FONTE_SOB_PRESSAO",
+      "title": "A PRAÇA VIROU COMBATE.",
+      "tag": "RUAS / FUZIL",
+      "color": "#FF765D",
+      "music_start": 0,
+      "music": {
+        "file": "shorts_bodycam/projeto/phonk_original_02.wav",
+        "sha256": "21c9e8c973cb056a2b186b57985d52e9a466a9be0d257f701bd021319b1d8c09",
+        "bpm": 150,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade de composição confirmada no script histórico montar.py: BEAT=0.4 s, compassos de 1.6 s; hats a cada 0.2 s. Áudio original preservado."
+      },
+      "cuts": [
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 396.005,
+          "beats": 8,
+          "note": "Retomada do fuzil diante da fonte.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 396.405,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 399.9,
+          "beats": 12,
+          "note": "Rajadas com mira e cobertura visíveis.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 406,
+          "beats": 8,
+          "note": "Recuo curto para recarregar.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 413.4,
+          "beats": 8,
+          "note": "Retorno pela van.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 416.7,
+          "beats": 8,
+          "note": "Avanço curto até a fonte.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 400.6,
+          "beats": 8,
+          "note": "Replay da rajada diante da fonte.",
+          "speed": 0.7,
+          "replay": true,
+          "center_x": 0.5,
+          "gamma": 1.12
+        }
+      ]
+    },
+    {
+      "name": "23_ULTIMA_PASSAGEM",
+      "title": "ATÉ A ÚLTIMA PASSAGEM.",
+      "tag": "RUAS / FINAL DA PARTIDA",
+      "color": "#A7DFFF",
+      "music_start": 0,
+      "music": {
+        "file": "shorts_bodycam/projeto/phonk_original_03.wav",
+        "sha256": "bd5f301bcb47de342f1a16e67634c1c5e209aeb881f4b5286b57a37ebdc609b5",
+        "bpm": 150,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade de composição confirmada no script histórico montar.py: BEAT=0.4 s, compassos de 1.6 s; hats a cada 0.2 s. Áudio original preservado."
+      },
+      "cuts": [
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 421.15,
+          "beats": 8,
+          "note": "Disparo pela borda da fonte.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 421.55,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 424.4,
+          "beats": 8,
+          "note": "Mudança de alvo junto à fonte.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 427.7,
+          "beats": 8,
+          "note": "Desfecho da disputa pela fonte.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 435.2,
+          "beats": 4,
+          "note": "Aproximação da área entre vans.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 438.315,
+          "beats": 8,
+          "note": "Contato entre veículos.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 438.715,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 441.5,
+          "beats": 4,
+          "note": "Desfecho com o fuzil e troca de arma.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 443.2,
+          "beats": 8,
+          "note": "Disparos com a pistola até o final do confronto.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.141.858.mp4",
+          "start": 438.4,
+          "beats": 4,
+          "note": "Replay curto do contato entre vans.",
+          "speed": 0.7,
+          "replay": true,
+          "center_x": 0.5,
+          "gamma": 1.12
+        }
+      ]
+    },
+    {
+      "name": "24_CASA_SOB_FOGO",
+      "title": "NÃO DÁ TEMPO DE PISCAR.",
+      "tag": "CASA / COMBATE PRÓXIMO",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "music": {
+        "file": "shorts_bodycam/projeto/phonk_original_04.wav",
+        "sha256": "bff12948ac077ba55ce51d08f68bd6110c3ea29c1dbd0effb27ee7a5e4861a75",
+        "bpm": 150,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade de composição confirmada no script histórico montar.py: BEAT=0.4 s, compassos de 1.6 s; hats a cada 0.2 s. Áudio original preservado."
+      },
+      "cuts": [
+        {
+          "file": "clipe_1.788.707.152.207.mp4",
+          "start": 13.73,
+          "beats": 8,
+          "note": "Rajada pela varanda; adversário preservado.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 14.13,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.152.207.mp4",
+          "start": 37,
+          "beats": 8,
+          "note": "Escopeta no corredor da casa.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.152.207.mp4",
+          "start": 44.555,
+          "beats": 12,
+          "note": "Contato na porta da sala e desfecho.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 44.955,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.152.207.mp4",
+          "start": 131.085,
+          "beats": 8,
+          "note": "Reação à figura na passagem interna.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 131.485,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 152.37,
+          "beats": 8,
+          "note": "Disparos pelo corredor com identificação de aliados preservada.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 152.77,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.152.207.mp4",
+          "start": 45.2,
+          "beats": 8,
+          "note": "Replay da reação na sala.",
+          "speed": 0.7,
+          "replay": true,
+          "center_x": 0.5,
+          "gamma": 1.12
+        }
+      ]
+    },
+    {
+      "name": "25_DO_TELHADO_A_VARANDA",
+      "title": "DO ALTO ATÉ A PORTA.",
+      "tag": "CASA / TELHADO E VARANDA",
+      "color": "#FF765D",
+      "music_start": 0,
+      "music": {
+        "file": "shorts_bodycam/projeto/phonk_original_05.wav",
+        "sha256": "9b955be9dd1e4916b979aa26d6755e77d624306acaad2fe894dd7433533a4bb5",
+        "bpm": 150,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade de composição confirmada no script histórico montar.py: BEAT=0.4 s, compassos de 1.6 s; hats a cada 0.2 s. Áudio original preservado."
+      },
+      "cuts": [
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 190.57,
+          "beats": 8,
+          "note": "Disparo a partir do telhado.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 190.97,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 194,
+          "beats": 8,
+          "note": "Segunda rajada para a área externa; fim antes da queda.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 210.295,
+          "beats": 8,
+          "note": "Escopeta pela borda do telhado.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 210.695,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 213.5,
+          "beats": 4,
+          "note": "Giro curto para a varanda.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 215.68,
+          "beats": 8,
+          "note": "Disparo ao contornar a borda.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 216.08,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 222.09,
+          "beats": 8,
+          "note": "Confronto no nível do chão.",
+          "speed": 1,
+          "replay": false,
+          "center_x": 0.5,
+          "gamma": 1.12,
+          "sync": {
+            "source_transient_seconds": 222.49,
+            "output_beat": 1,
+            "method": "Ataque de áudio mais forte em janela de 440 ms do disparo escolhido visualmente; entrada um beat antes."
+          }
+        },
+        {
+          "file": "clipe_1.788.707.134.249.mp4",
+          "start": 216,
+          "beats": 8,
+          "note": "Replay da escopeta pela varanda.",
+          "speed": 0.7,
+          "replay": true,
+          "center_x": 0.5,
+          "gamma": 1.12
+        }
+      ]
+    }
+  ],
+  "request": "Máximo de Shorts distintos; somente phonks locais após cancelamento das faixas russas pelo usuário."
+}

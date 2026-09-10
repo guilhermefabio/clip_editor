@@ -1,0 +1,14 @@
+Prints para calibrar o detector de kill.
+
+Coloque aqui 2-3 PNG/JPG de frames REAIS do jogo mostrando:
+  1. um KILL acontecendo — hitmarker no centro (Bodycam não tem killfeed na tela)
+  2. um ALIADO com o contorno/marcador VERDE em volta
+  3. um INIMIGO (sem verde), de preferência perto da mira
+
+Com esses prints eu ajusto em config.py:
+  - KILL_ROI_HITMARKER                       (posição exata na tela)
+  - FRIENDLY_GREEN_HSV_LO / _HI              (o tom de verde do aliado)
+  - FRIENDLY_GREEN_BOX_MIN                   (quanto verde = aliado)
+
+Enquanto não calibrar, enemy_* == person_* (todo mundo vira "inimigo")
+e a ROI do hitmarker usa um chute geométrico.

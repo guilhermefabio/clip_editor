@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "output": "shorts_bodycam_lote3",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Ataques em 0.4167, 0.8333, 1.25, 1.6667 s; segundo lote aprovado."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "11_DEFINIR",
+      "title": "DEFINIR APÓS INSPEÇÃO",
+      "tag": "DEFINIR",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": []
+    },
+    {
+      "name": "12_DEFINIR",
+      "title": "DEFINIR APÓS INSPEÇÃO",
+      "tag": "DEFINIR",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": []
+    },
+    {
+      "name": "13_DEFINIR",
+      "title": "DEFINIR APÓS INSPEÇÃO",
+      "tag": "DEFINIR",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": []
+    },
+    {
+      "name": "14_DEFINIR",
+      "title": "DEFINIR APÓS INSPEÇÃO",
+      "tag": "DEFINIR",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": []
+    },
+    {
+      "name": "15_DEFINIR",
+      "title": "DEFINIR APÓS INSPEÇÃO",
+      "tag": "DEFINIR",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": []
+    }
+  ]
+}

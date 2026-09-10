@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "sources": [
+    "2026-09-07 15-00-47.mkv"
+  ],
+  "output": "shorts_bodycam_lote12",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "54_ATRAVESSA_A_ARENA",
+      "title": "ATRAVESSA A ARENA",
+      "tag": "PAINTBALL / FLANCO",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 0.045,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1516.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Rajadas na janela azul, confronto no arco, troca para luneta e travessia ate a porta central."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1521.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Rajadas na janela azul, confronto no arco, troca para luneta e travessia ate a porta central."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1525.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Rajadas na janela azul, confronto no arco, troca para luneta e travessia ate a porta central."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1530,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Rajadas na janela azul, confronto no arco, troca para luneta e travessia ate a porta central."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1538.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Rajadas na janela azul, confronto no arco, troca para luneta e travessia ate a porta central."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1544.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Rajadas na janela azul, confronto no arco, troca para luneta e travessia ate a porta central."
+        }
+      ]
+    },
+    {
+      "name": "55_DE_CIMA_PRA_BAIXO",
+      "title": "DE CIMA PRA BAIXO",
+      "tag": "ARENA / PASSARELA",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+      },
+      "music_start": 1.6666666666666667,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1598,
+          "beats": 10,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Tiros do mezanino para o piso inferior, troca de arma e pistola. Manequins da arena nao sao tratados como inimigos."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1602.2,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Tiros do mezanino para o piso inferior, troca de arma e pistola. Manequins da arena nao sao tratados como inimigos."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1607,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Tiros do mezanino para o piso inferior, troca de arma e pistola. Manequins da arena nao sao tratados como inimigos."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1610.5,
+          "beats": 6,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Tiros do mezanino para o piso inferior, troca de arma e pistola. Manequins da arena nao sao tratados como inimigos."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1613.1,
+          "beats": 6,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Tiros do mezanino para o piso inferior, troca de arma e pistola. Manequins da arena nao sao tratados como inimigos."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1623.5,
+          "beats": 10,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Tiros do mezanino para o piso inferior, troca de arma e pistola. Manequins da arena nao sao tratados como inimigos."
+        }
+      ]
+    },
+    {
+      "name": "56_VIRA_E_DISPARA",
+      "title": "VIRA E DISPARA",
+      "tag": "ARENA / CONTATO",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 3.4735714285714283,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1630.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Inimigo cai junto ao pilar da escada; giro de luneta, contato junto a mesa branca e avancar pela lateral."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1634,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Inimigo cai junto ao pilar da escada; giro de luneta, contato junto a mesa branca e avancar pela lateral."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1637.5,
+          "beats": 6,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Inimigo cai junto ao pilar da escada; giro de luneta, contato junto a mesa branca e avancar pela lateral."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1645.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Inimigo cai junto ao pilar da escada; giro de luneta, contato junto a mesa branca e avancar pela lateral."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1649,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Inimigo cai junto ao pilar da escada; giro de luneta, contato junto a mesa branca e avancar pela lateral."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1654.8,
+          "beats": 10,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Inimigo cai junto ao pilar da escada; giro de luneta, contato junto a mesa branca e avancar pela lateral."
+        }
+      ]
+    },
+    {
+      "name": "57_ANGULO_NOVO",
+      "title": "ANGULO NOVO",
+      "tag": "ARENA / PRESSAO",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+      },
+      "music_start": 0.0,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1664.7,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Alternar combate sob o mezanino, pilares, corredores e reposicionamento; sem associar manequins a kills."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1678.7,
+          "beats": 10,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Alternar combate sob o mezanino, pilares, corredores e reposicionamento; sem associar manequins a kills."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1693.5,
+          "beats": 10,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Alternar combate sob o mezanino, pilares, corredores e reposicionamento; sem associar manequins a kills."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1697.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Alternar combate sob o mezanino, pilares, corredores e reposicionamento; sem associar manequins a kills."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1709.5,
+          "beats": 6,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Alternar combate sob o mezanino, pilares, corredores e reposicionamento; sem associar manequins a kills."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1715.5,
+          "beats": 6,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Alternar combate sob o mezanino, pilares, corredores e reposicionamento; sem associar manequins a kills."
+        }
+      ]
+    },
+    {
+      "name": "58_VARREDURA_DE_MADEIRA",
+      "title": "VARREDURA DE MADEIRA",
+      "tag": "ARENA / SEQUENCIA",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 1.7592857142857141,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1726.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 1: Inimigo proximo na sala de madeira, progressao, rajadas e corpo no piso, contato na escada e corredor."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1730,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 2: Inimigo proximo na sala de madeira, progressao, rajadas e corpo no piso, contato na escada e corredor."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1734.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 3: Inimigo proximo na sala de madeira, progressao, rajadas e corpo no piso, contato na escada e corredor."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1738,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 4: Inimigo proximo na sala de madeira, progressao, rajadas e corpo no piso, contato na escada e corredor."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1741.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 5: Inimigo proximo na sala de madeira, progressao, rajadas e corpo no piso, contato na escada e corredor."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1747,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.1,
+          "replay": false,
+          "note": "Corte 6: Inimigo proximo na sala de madeira, progressao, rajadas e corpo no piso, contato na escada e corredor."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "sources": [
+    "2026-09-07 15-00-47.mkv"
+  ],
+  "output": "shorts_bodycam_lote10",
+  "channel": "VIEIRASPLAY",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/beat_phonk.wav",
+    "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "44_PORTA_SOB_PRESSAO",
+      "title": "PORTA SOB PRESSAO",
+      "tag": "RUINAS / ENTRADA",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 3.4735714285714283,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 724,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 1: Troca de tiros no corredor branco e na juncao; intercalar recarga e passagem para manter a geografia legivel."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 727.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 2: Troca de tiros no corredor branco e na juncao; intercalar recarga e passagem para manter a geografia legivel."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 731.1,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 3: Troca de tiros no corredor branco e na juncao; intercalar recarga e passagem para manter a geografia legivel."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 739,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 4: Troca de tiros no corredor branco e na juncao; intercalar recarga e passagem para manter a geografia legivel."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 742.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 5: Troca de tiros no corredor branco e na juncao; intercalar recarga e passagem para manter a geografia legivel."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 747.1,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 6: Troca de tiros no corredor branco e na juncao; intercalar recarga e passagem para manter a geografia legivel."
+        }
+      ]
+    },
+    {
+      "name": "45_CORREDOR_VERMELHO",
+      "title": "CORREDOR VERMELHO",
+      "tag": "HOSPITAL / CONTATO",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+      },
+      "music_start": 0.0,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1146,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 1: Combates no corredor vermelho, troca de arma, passagem e pistola pela porta."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1153.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 2: Combates no corredor vermelho, troca de arma, passagem e pistola pela porta."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1160,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 3: Combates no corredor vermelho, troca de arma, passagem e pistola pela porta."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1167,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 4: Combates no corredor vermelho, troca de arma, passagem e pistola pela porta."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1177.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 5: Combates no corredor vermelho, troca de arma, passagem e pistola pela porta."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1187.2,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 6: Combates no corredor vermelho, troca de arma, passagem e pistola pela porta."
+        }
+      ]
+    },
+    {
+      "name": "46_PORTA_A_PORTA",
+      "title": "PORTA A PORTA",
+      "tag": "HOSPITAL / AVANCO",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 1.7592857142857141,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1202.7,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 1: Contato junto a porta XRAY com queda visivel, giro no corredor, novos tiros e passagem junto a cortina."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1206.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 2: Contato junto a porta XRAY com queda visivel, giro no corredor, novos tiros e passagem junto a cortina."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1210,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 3: Contato junto a porta XRAY com queda visivel, giro no corredor, novos tiros e passagem junto a cortina."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1218.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 4: Contato junto a porta XRAY com queda visivel, giro no corredor, novos tiros e passagem junto a cortina."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1222,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 5: Contato junto a porta XRAY com queda visivel, giro no corredor, novos tiros e passagem junto a cortina."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1225.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 6: Contato junto a porta XRAY com queda visivel, giro no corredor, novos tiros e passagem junto a cortina."
+        }
+      ]
+    },
+    {
+      "name": "47_SEM_RESPIRAR",
+      "title": "SEM RESPIRAR",
+      "tag": "HOSPITAL / SEQUENCIA",
+      "color": "#DAFF64",
+      "music": {
+        "file": "audio/beat_phonk.wav",
+        "sha256": "c426fee8d1083e7fcf161eb80e93061517338230ecbedb1aa4bc6564630af91c",
+        "bpm": 144,
+        "grid_offset_seconds": 0,
+        "evidence": "Grade aprovada: ataques a cada 0.416667 s, 144 BPM."
+      },
+      "music_start": 3.3333333333333335,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1229.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 1: Pressao em portas adjacentes, alvo e corpo junto a cortina, troca de arma e pistola no corredor longo."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1233.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 2: Pressao em portas adjacentes, alvo e corpo junto a cortina, troca de arma e pistola no corredor longo."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1236.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 3: Pressao em portas adjacentes, alvo e corpo junto a cortina, troca de arma e pistola no corredor longo."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1240.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 4: Pressao em portas adjacentes, alvo e corpo junto a cortina, troca de arma e pistola no corredor longo."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1243.8,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 5: Pressao em portas adjacentes, alvo e corpo junto a cortina, troca de arma e pistola no corredor longo."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1247.3,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 6: Pressao em portas adjacentes, alvo e corpo junto a cortina, troca de arma e pistola no corredor longo."
+        }
+      ]
+    },
+    {
+      "name": "48_CURTA_DISTANCIA",
+      "title": "CURTA DISTANCIA",
+      "tag": "HOSPITAL / COMBATE",
+      "color": "#FF765D",
+      "music": {
+        "file": "audio/bodycam_hook_dark_phonk.wav",
+        "sha256": "b6e4b5f99edcee2d62b1e3095110a4928ba5303619f5b00253c00fae6c01cd47",
+        "bpm": 140,
+        "grid_offset_seconds": 0.045,
+        "evidence": "Envelope de percussao filtrado acima de 1800 Hz, RMS de 5 ms: grade dominante 140 BPM, fase 0.045 s. Medicao em harness/analise_longa/musicas.json; arquivo original sem retiming."
+      },
+      "music_start": 0.045,
+      "cuts": [
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1251,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 1: Encontro a curta distancia, corpo no chao, giro para outra porta e contato antes do fim da vida."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1254.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 2: Encontro a curta distancia, corpo no chao, giro para outra porta e contato antes do fim da vida."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1258,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 3: Encontro a curta distancia, corpo no chao, giro para outra porta e contato antes do fim da vida."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1263.6,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 4: Encontro a curta distancia, corpo no chao, giro para outra porta e contato antes do fim da vida."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1267.1,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 5: Encontro a curta distancia, corpo no chao, giro para outra porta e contato antes do fim da vida."
+        },
+        {
+          "file": "2026-09-07 15-00-47.mkv",
+          "start": 1277.5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.18,
+          "replay": false,
+          "note": "Corte 6: Encontro a curta distancia, corpo no chao, giro para outra porta e contato antes do fim da vida."
+        }
+      ]
+    }
+  ]
+}
