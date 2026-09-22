@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import config as C  # noqa: E402
-from pipeline import beatgrid, features, group, media, planbuild, score  # noqa: E402
+from pipeline import beatgrid, features, group, media, merge, planbuild, score  # noqa: E402
 
 from fastapi import FastAPI, HTTPException  # noqa: E402
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse  # noqa: E402
@@ -75,7 +75,7 @@ def sources():
     seen = set()
     cands = list(C.GRAVACOES_DIR.glob("*.m*")) + list(C.ROOT.glob("*.m*"))
     for p in sorted(cands, key=lambda q: q.name):
-        if p.suffix.lower() not in (".mkv", ".mp4", ".mov") or p.stat().st_size < 20_000_000:
+        if p.suffix.lower() not in (".mkv", ".mp4", ".mov") or not p.is_file():
             continue
         if p.name in seen:
             continue
@@ -96,6 +96,19 @@ def sources():
                     "duration": rec["duration"], "sha": rec["sha"], "scored": scored})
     _save_index(idx)
     return out
+
+
+class MergeBody(BaseModel):
+    files: list[str]
+
+
+@app.post("/api/merge")
+def merge_sources(body: MergeBody):
+    try:
+        merge.resolve_sources(body.files)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    return {"job": start_job("merge", lambda prog, log: merge.join(body.files, prog))}
 
 
 # ----------------------------------------------------------------- model
@@ -226,7 +239,10 @@ class PlanBody(BaseModel):
 
 @app.post("/api/plan")
 def make_plan(body: PlanBody):
-    built = planbuild.build_plan(body.file, body.edits, body.output, music=body.music)
+    try:
+        built = planbuild.build_plan(body.file, body.edits, body.output, music=body.music)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
     verdict = planbuild.check(built["plan_path"])
     return {**built, **verdict}
 

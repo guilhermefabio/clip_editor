@@ -32,6 +32,10 @@ from pipeline import features  # noqa: E402
 IMG_RE = re.compile(r"\.(jpe?g|png|webp|bmp)$", re.I)
 AUDIO_COLS = [i for i, n in enumerate(features.FEATURE_NAMES) if n.startswith("audio_")]
 MOTION_COLS = [features.FEATURE_NAMES.index(n) for n in ("motion", "center_motion")]
+PERSON_COLS = [features.FEATURE_NAMES.index(n) for n in
+               ("person_count", "person_conf", "person_area", "person_center", "person_area_sum")]
+ENEMY_COLS = [features.FEATURE_NAMES.index(n) for n in
+              ("enemy_count", "enemy_area", "enemy_center")]
 
 
 def _label_dirs() -> list[tuple[Path, int]]:
@@ -69,8 +73,8 @@ def image_row(path: Path, model=None) -> np.ndarray | None:
     row, _ = features.visual_row(bgr, None, features.geom(w, h))
     if model is not None:
         st = features._yolo_person_stats([bgr], model)[0]
-        row[12:17] = st[:5]
-        row[20:23] = st[5:8]
+        row[PERSON_COLS] = st[:5]
+        row[ENEMY_COLS] = st[5:8]
     row[AUDIO_COLS] = np.nan            # foto não tem áudio
     return row
 

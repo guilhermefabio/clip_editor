@@ -70,6 +70,20 @@ def build_plan(source_file: str, edits: list[dict], output: str | None = None,
         "allow_reuse": False,
         "edits": [_clean_edit(e) for e in edits],
     }
+    # Joined files are analysis sources. Render from originals so reuse checks
+    # and history still refer to the original content hashes and timestamps.
+    from pipeline.merge import original_cut
+    for edit in plan["edits"]:
+        bpm = float(edit.get("music", plan_music)["bpm"])
+        cursor = 0.0
+        previous_frame = 0
+        for cut in edit["cuts"]:
+            cursor += cut["beats"] * 60 / bpm
+            end_frame = round(cursor * 60)
+            duration = (end_frame - previous_frame) / 60 * cut.get("speed", 1)
+            previous_frame = end_frame
+            cut["file"], cut["start"] = original_cut(cut["file"], cut["start"], duration)
+    plan["sources"] = sorted({c["file"] for e in plan["edits"] for c in e["cuts"]})
     if _versions is not None:
         try:
             plan["versions"] = _versions.stamp()

@@ -46,6 +46,19 @@ Os pesos `studio/model/yolov8n.pt` já estão baixados.
 
 ## 2. Fluxo na página
 
+Em **Fonte → Unir vídeos antes da edição**, adicione duas ou mais gravações,
+ordene com ↑/↓ e clique em **Unir vídeos**. Ao terminar, o arquivo unido fica
+selecionado: clique em **Analisar** e siga o fluxo normal. Vídeos curtos também
+aparecem na seleção.
+
+A união cria `gravacoes/unidos_<id>.mp4` e um mapa `.origens.json`, preservando
+os arquivos originais. Mantém o áudio da gameplay; trechos sem áudio recebem
+silêncio. Normaliza resolução e FPS pela primeira gravação (até 60 fps), com
+barras quando necessário, sem esticar a imagem. A preparação recodifica em
+H.264 e pode demorar em gravações longas. Cópias idênticas são recusadas pelo
+SHA-256. Para renderizar e registrar o histórico, o plano volta aos arquivos e
+tempos originais. Um corte que atravesse a junção exige ajuste na timeline.
+
 | # | Seção | O que fazer |
 |---|---|---|
 | 1 | **Fonte** | Escolher a gravação (`.mkv`/`.mp4` em `gravacoes/` ou na raiz) e clicar **Analisar**. Roda uma vez por arquivo; o resultado fica em `studio/cache/<sha>/`. Um vídeo de 40 min leva ~6–8 min (YOLO em CPU); um clipe de 1–2 min, segundos. |

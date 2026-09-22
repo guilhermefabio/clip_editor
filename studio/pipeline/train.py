@@ -90,10 +90,10 @@ def _importances(model, X, y, names, n_repeats=6):
 def train(progress=None, raw_only: bool = False) -> dict:
     if progress:
         progress(0.05, "coletando gravacoes brutas" if raw_only
-                 else "coletando gravacoes brutas + clipes de kill")
+                 else "coletando gravacoes brutas + clipes de kill + frames revisados")
     data = dataset.build(
         progress=lambda p, m: progress and progress(0.05 + 0.55 * p, m),
-        use_kill_clips=not raw_only)
+        use_kill_clips=not raw_only, use_review_frames=not raw_only)
     X, y, g, names, tt = data["X"], data["y"], data["groups"], data["names"], data["times"]
 
     if progress:
@@ -120,8 +120,11 @@ def train(progress=None, raw_only: bool = False) -> dict:
     meta = {
         "trained_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         "raw_only": bool(raw_only),
-        "source": "gravacoes brutas" if raw_only else "gravacoes brutas + clipes_kill/",
+        "source": ("gravacoes brutas" if raw_only
+                   else "gravacoes brutas + clipes_kill/ + frames revisados"),
         "n_kill_clips": sum(1 for s in data["sources"] if s.get("kind") == "kill_clip"),
+        "n_review_pos": sum(s.get("pos", 0) for s in data["sources"] if s.get("kind") == "frame_review"),
+        "n_review_neg": sum(s.get("neg", 0) for s in data["sources"] if s.get("kind") == "frame_review"),
         "audio_used": any(n.startswith("audio_") for n in names),
         "n_rows": int(len(y)),
         "n_pos": int(y.sum()),

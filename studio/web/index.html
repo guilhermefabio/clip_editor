@@ -72,8 +72,8 @@
     <h2>0 · Modelo de interesse</h2>
     <div class="row">
       <button id="btnTrain" class="primary">Treinar / retreinar</button>
-      <label title="Padrão (desmarcado): gravações brutas (cortes = positivo, resto = negativo) + clipes crus de kill de clipes_kill/ como positivo extra. Marcado: ignora clipes_kill/ e treina só nas gravações brutas com cortes aprovados. Áudio sempre dentro.">
-        <input type="checkbox" id="trainRawOnly"> ignorar clipes de kill (só gravações)
+      <label title="Padrão (desmarcado): gravações brutas (cortes = positivo, resto = negativo) + clipes crus de kill de clipes_kill/ como positivo extra + frames revisados em frames/kill (positivo) e frames/nada (negativo). Marcado: ignora clipes_kill/ e frames/ e treina só nas gravações brutas com cortes aprovados. Áudio sempre dentro.">
+        <input type="checkbox" id="trainRawOnly"> ignorar clipes de kill e frames revisados (só gravações)
       </label>
       <span id="trainMsg" class="muted"></span>
     </div>
@@ -83,6 +83,18 @@
 
   <section id="secSource">
     <h2>1 · Fonte</h2>
+    <details style="margin-bottom:14px">
+      <summary>Unir vídeos antes da edição</summary>
+      <p class="muted">Adicione duas ou mais gravações e ajuste a ordem. O arquivo unido mantém o áudio dos vídeos e fica disponível para análise.</p>
+      <div class="row">
+        <select id="mergeSource" aria-label="Vídeo para adicionar à união"></select>
+        <button id="btnMergeAdd" class="ghost">Adicionar à sequência</button>
+      </div>
+      <ol id="mergeList"></ol>
+      <button id="btnMerge" class="primary" disabled>Unir vídeos</button>
+      <div id="mergeBar" class="bar hidden"><i></i></div>
+      <div id="mergeMsg" class="muted" role="status"></div>
+    </details>
     <div class="row">
       <select id="source"></select>
       <button id="btnReload" class="ghost">↻</button>

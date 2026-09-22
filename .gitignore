@@ -6,6 +6,7 @@
 # --- mídia bruta e renderizada ---
 *.mkv
 *.mp4
+*.mov
 *.wav
 *.mp3
 *.zip
@@ -31,6 +32,14 @@
 /studio/cache/
 /studio/model/*.joblib
 /studio/model/*.pt
+/studio/model/**/*.joblib
+/studio/model/**/*.pt
+/studio/model/**/*.npz
+/studio/model/antes_*/
+/studio/.merge_test_tmp*/
+/studio/.git_prepare_tests/
+/studio/server.*.log
+/studio/model/*.log
 /studio/notebooks/_frames/
 
 # --- binários de terceiros (baixe conforme _tools/LEIA.txt) ---
@@ -47,3 +56,10 @@ __pycache__/
 .ipynb_checkpoints/
 Thumbs.db
 .DS_Store
+
+# Credenciais locais (exemplos podem ser versionados)
+.env
+.env.*
+!.env.example
+.venv/
+venv/

@@ -10,10 +10,12 @@ const post = (url, body) =>
 const pollJob = (id, onTick) =>
   new Promise((res, rej) => {
     const t = setInterval(async () => {
+      try {
       const j = await api(`/api/job/${id}`);
       onTick?.(j);
       if (j.status === "done") { clearInterval(t); res(j); }
       if (j.status === "error") { clearInterval(t); rej(new Error(j.message)); }
+      } catch (e) { clearInterval(t); rej(e); }
     }, 900);
   });
 
@@ -39,16 +41,21 @@ async function loadModel() {
     pill.title = `treinado ${m.trained_at}`;
   }
 
+  const srcQty = (s) => {
+    if (s.kind === "kill_clip") return "clipe de kill";
+    if (s.kind === "frame_review") return `${s.pos} kill / ${s.neg} nada`;
+    return `${s.cuts} cortes`;
+  };
   const srcRows = (m.train_sources_on_disk || [])
-    .map((s) => `<tr><td>${s.file}</td><td>${s.kind || ""}</td><td>${s.kind === "kill_clip" ? "clipe de kill" : s.cuts + " cortes"}</td><td>${s.seconds != null ? s.seconds + "s" : "—"}${s.cached_only ? " (cache)" : ""}</td></tr>`)
+    .map((s) => `<tr><td>${s.file}</td><td>${s.kind || ""}</td><td>${srcQty(s)}</td><td>${s.seconds != null ? s.seconds + "s" : "—"}${s.cached_only ? " (cache)" : ""}</td></tr>`)
     .join("");
   const blocked = ((m.training_status || {}).lotes || []).filter((l) => l.cuts_sources_missing.length);
   const blockedRows = blocked
     .map((l) => `<tr><td>${l.lote}</td><td class="warn">${l.cuts_sources_missing.join(", ")}</td><td>${l.rendered_shorts} shorts no disco</td></tr>`)
     .join("");
   const trainableLine = m.trainable
-    ? `<span class="muted">Treino usa as <b>gravações brutas</b> (cortes = positivo, resto = negativo) + os <b>clipes de kill</b> de <code>clipes_kill/</code> (10–15 s, cru) como positivo extra. Áudio dentro. O checkbox ignora os clipes de kill.</span>`
-    : `<span class="warn">Nada treinável. Traga uma gravação com cortes aprovados (<code>projeto/edicao.json</code>) para a raiz; opcionalmente clipes crus de kill de 10–15 s em <code>clipes_kill/</code>.</span>`;
+    ? `<span class="muted">Treino usa as <b>gravações brutas</b> (cortes = positivo, resto = negativo) + os <b>clipes de kill</b> de <code>clipes_kill/</code> (10–15 s, cru) + os <b>frames revisados</b> de <code>frames/kill</code>/<code>frames/nada</code> como extra. Áudio dentro. O checkbox ignora clipes de kill e frames revisados.</span>`
+    : `<span class="warn">Nada treinável. Traga uma gravação com cortes aprovados (<code>projeto/edicao.json</code>) para a raiz; opcionalmente clipes crus de kill de 10–15 s em <code>clipes_kill/</code> e/ou frames revisados em <code>frames/kill</code>/<code>frames/nada</code>.</span>`;
 
   if (!m.trained) {
     panel.innerHTML = `<p class="warn">Modelo ainda não treinado.</p>${trainableLine}
@@ -89,16 +96,70 @@ async function loadModel() {
 async function loadSources() {
   const list = await api("/api/sources");
   const sel = $("#source");
-  sel.innerHTML = list
-    .map((s) => `<option value="${s.file}">${s.file} — ${(s.duration / 60).toFixed(1)} min ${s.scored ? "✓" : ""}</option>`)
-    .join("");
-  if (list.length) onSourcePick();
+  const previous = S.source;
+  sel.replaceChildren(...list.map((s) => new Option(
+    `${s.file} — ${(s.duration / 60).toFixed(1)} min ${s.scored ? "✓" : ""}`, s.file)));
+  $("#mergeSource").replaceChildren(...list.map((s) => new Option(s.file, s.file)));
+  if (list.some((s) => s.file === previous)) sel.value = previous;
+  onSourcePick();
 }
 function onSourcePick() {
   const sel = $("#source");
+  if (S.source !== sel.value) {
+    S.score = null; S.candidates = []; S.shorts = []; S.planPath = null;
+    ["#secTimeline", "#secShorts", "#secRender", "#secReview"].forEach((id) => $(id).classList.add("hidden"));
+    $("#btnRender").disabled = true;
+  }
   S.source = sel.value;
-  const txt = sel.selectedOptions[0].textContent;
+  const txt = sel.selectedOptions[0]?.textContent || "";
   $("#srcInfo").textContent = txt.includes("✓") ? "ja analisado — pode agrupar direto" : "";
+}
+
+const mergeFiles = [];
+let merging = false, analyzing = false;
+function drawMergeList() {
+  const list = $("#mergeList");
+  list.replaceChildren();
+  mergeFiles.forEach((file, i) => {
+    const li = document.createElement("li");
+    li.append(document.createTextNode(file + " "));
+    for (const [label, delta] of [["↑", -1], ["↓", 1], ["Remover", 0]]) {
+      const b = document.createElement("button");
+      b.textContent = label; b.className = "ghost";
+      b.disabled = merging || (delta !== 0 && (i + delta < 0 || i + delta >= mergeFiles.length));
+      b.onclick = () => {
+        if (delta) [mergeFiles[i], mergeFiles[i + delta]] = [mergeFiles[i + delta], mergeFiles[i]];
+        else mergeFiles.splice(i, 1);
+        drawMergeList();
+      };
+      li.append(b);
+    }
+    list.append(li);
+  });
+  $("#btnMerge").disabled = merging || analyzing || mergeFiles.length < 2;
+  $("#btnMergeAdd").disabled = merging;
+}
+async function mergeVideos() {
+  merging = true; drawMergeList();
+  const msg = $("#mergeMsg"), bar = $("#mergeBar");
+  bar.classList.remove("hidden");
+  ["#source", "#btnAnalyze", "#btnReload"].forEach((id) => $(id).disabled = true);
+  try {
+    const { job } = await post("/api/merge", { files: [...mergeFiles] });
+    const result = await pollJob(job, (j) => {
+      bar.querySelector("i").style.width = `${j.progress * 100}%`;
+      msg.textContent = j.message;
+    });
+    await loadSources();
+    $("#source").value = result.result.file;
+    onSourcePick();
+    msg.textContent = "Vídeos unidos. Clique em Analisar para começar a edição.";
+    mergeFiles.length = 0;
+  } catch (e) { msg.textContent = "Erro: " + e.message; }
+  finally {
+    merging = false; drawMergeList();
+    ["#source", "#btnAnalyze", "#btnReload"].forEach((id) => $(id).disabled = false);
+  }
 }
 
 // ---------------------------------------------------------------- music track
@@ -163,8 +224,12 @@ function musicStart(track, beats) {
 
 // ---------------------------------------------------------------- analyse
 async function analyze() {
+  analyzing = true;
   const bar = $("#anBar"); bar.classList.remove("hidden");
   $("#btnAnalyze").disabled = true;
+  $("#source").disabled = true;
+  $("#btnMerge").disabled = true;
+  $("#btnReload").disabled = true;
   try {
     const { job } = await post("/api/analyze", { file: S.source });
     await pollJob(job, (j) => {
@@ -173,7 +238,10 @@ async function analyze() {
     });
     await loadScore();
   } catch (e) { $("#anMsg").textContent = "erro: " + e.message; }
-  finally { $("#btnAnalyze").disabled = false; }
+  finally {
+    analyzing = false; drawMergeList();
+    ["#btnAnalyze", "#source", "#btnReload"].forEach((id) => $(id).disabled = false);
+  }
 }
 
 async function loadScore() {
@@ -422,6 +490,12 @@ $("#btnTrain").addEventListener("click", async () => {
   }
 });
 $("#btnReload").addEventListener("click", loadSources);
+$("#btnMergeAdd").addEventListener("click", () => {
+  const file = $("#mergeSource").value;
+  if (file && !mergeFiles.includes(file)) mergeFiles.push(file);
+  drawMergeList();
+});
+$("#btnMerge").addEventListener("click", mergeVideos);
 $("#source").addEventListener("change", onSourcePick);
 $("#btnAnalyze").addEventListener("click", analyze);
 $("#musicFile").addEventListener("change", onMusicPick);

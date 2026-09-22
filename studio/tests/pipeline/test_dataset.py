@@ -39,6 +39,15 @@ REC_GROUPS = {
 }
 
 
+@pytest.fixture(autouse=True)
+def frames_dir(tmp_path, monkeypatch):
+    """Isolate frames/ + model/ so tests never touch the real reviewed dataset
+    or write into the real cache file."""
+    monkeypatch.setattr(C, "FRAMES_DIR", tmp_path / "frames")
+    monkeypatch.setattr(C, "MODEL_DIR", tmp_path / "model")
+    return tmp_path / "frames"
+
+
 @pytest.fixture
 def kill_dir(tmp_path, monkeypatch):
     d = tmp_path / "clipes_kill"
@@ -141,6 +150,79 @@ def test_build_groups_keep_clips_and_recording_apart(kill_dir, stubs, monkeypatc
     assert len(set(data["groups"])) == 3  # 1 gravação + 2 clipes
 
 
+# --------------------------------------------------------------- iter_review_frames
+def _touch(p):
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_bytes(b"x")
+
+
+def test_iter_review_frames_groups_by_embedded_sha(frames_dir):
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000010.jpg")
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000020.jpg")
+    _touch(frames_dir / "nada" / "gt_bbbbbbbbbbbb_f0000000.jpg")
+    _touch(frames_dir / "nada" / "estranho.jpg")
+    got = {p.name: (label, gid) for p, label, gid in dataset.iter_review_frames()}
+    assert got["gt_aaaaaaaaaaaa_f0000010.jpg"] == (1, "frame:aaaaaaaaaaaa")
+    assert got["gt_aaaaaaaaaaaa_f0000020.jpg"] == (1, "frame:aaaaaaaaaaaa")
+    assert got["gt_bbbbbbbbbbbb_f0000000.jpg"] == (0, "frame:bbbbbbbbbbbb")
+    assert got["estranho.jpg"] == (0, "frame:estranho")
+
+
+def test_iter_review_frames_missing_dirs_is_empty(frames_dir):
+    assert dataset.iter_review_frames() == []
+
+
+# --------------------------------------------------------------- build() + reviewed frames
+def _fake_row(seed):
+    rng = np.random.default_rng(seed)
+    return np.abs(rng.normal(0.1, 0.05, size=N_BASE)).astype(np.float32)
+
+
+@pytest.fixture
+def review_stub(monkeypatch):
+    monkeypatch.setattr(dataset.imgset, "_load_yolo", lambda: None)
+    monkeypatch.setattr(dataset.imgset, "image_row",
+                        lambda p, model: _fake_row(abs(hash(p.name)) % 1000))
+
+
+def test_build_folds_in_review_frames_alone(frames_dir, review_stub, monkeypatch):
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000010.jpg")
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000020.jpg")
+    _touch(frames_dir / "nada" / "gt_bbbbbbbbbbbb_f0000000.jpg")
+    _touch(frames_dir / "nada" / "gt_bbbbbbbbbbbb_f0000005.jpg")
+    monkeypatch.setattr(dataset, "_cut_groups", lambda: {})
+    data = dataset.build(use_kill_clips=False)
+    fr = [s for s in data["sources"] if s["kind"] == "frame_review"][0]
+    assert fr["pos"] == 2 and fr["neg"] == 2
+    assert set(np.unique(data["y"])) == {0.0, 1.0}
+    assert set(data["groups"]) == {"frame:aaaaaaaaaaaa", "frame:bbbbbbbbbbbb"}
+
+
+def test_build_review_frames_cache_avoids_recompute(frames_dir, monkeypatch):
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000010.jpg")
+    _touch(frames_dir / "nada" / "gt_bbbbbbbbbbbb_f0000000.jpg")
+    monkeypatch.setattr(dataset, "_cut_groups", lambda: {})
+    calls = []
+
+    def counting_row(p, model):
+        calls.append(p.name)
+        return _fake_row(len(calls))
+
+    monkeypatch.setattr(dataset.imgset, "_load_yolo", lambda: None)
+    monkeypatch.setattr(dataset.imgset, "image_row", counting_row)
+    dataset.build(use_kill_clips=False)
+    assert len(calls) == 2
+    dataset.build(use_kill_clips=False)
+    assert len(calls) == 2  # segunda chamada reaproveita o cache em disco
+
+
+def test_build_raw_only_ignores_review_frames(frames_dir, kill_dir, stubs, review_stub, monkeypatch):
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000010.jpg")
+    monkeypatch.setattr(dataset, "_cut_groups", lambda: dict(REC_GROUPS))
+    data = dataset.build(use_kill_clips=False, use_review_frames=False)
+    assert "frame_review" not in {s["kind"] for s in data["sources"]}
+
+
 # --------------------------------------------------------------- available_sources
 def test_available_sources_lists_kill_clips_then_recordings(kill_dir, stubs, monkeypatch):
     (kill_dir / "k1.mp4").write_bytes(b"x")
@@ -149,3 +231,13 @@ def test_available_sources_lists_kill_clips_then_recordings(kill_dir, stubs, mon
     out = dataset.available_sources()
     assert out[0]["kind"] == "kill_clip" and "clipes_kill" in out[0]["file"]
     assert out[-1]["kind"] == "gravacao"
+
+
+def test_available_sources_includes_review_frames(frames_dir, kill_dir, stubs, monkeypatch):
+    _touch(frames_dir / "kill" / "gt_aaaaaaaaaaaa_f0000010.jpg")
+    _touch(frames_dir / "nada" / "gt_bbbbbbbbbbbb_f0000000.jpg")
+    _touch(frames_dir / "nada" / "gt_bbbbbbbbbbbb_f0000005.jpg")
+    monkeypatch.setattr(dataset, "_cut_groups", lambda: {})
+    out = dataset.available_sources()
+    fr = [s for s in out if s["kind"] == "frame_review"][0]
+    assert fr["pos"] == 1 and fr["neg"] == 2

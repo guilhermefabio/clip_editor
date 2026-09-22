@@ -9,15 +9,6 @@ All supervision is **raw gameplay** now (no rendered Shorts, no music):
    approved cut; negatives = frames well outside every cut of the same
    recording (walking, menu, loot, dead time). Works from the source file OR
    its cached features, so a deleted recording still trains.
-3. **Reviewed screenshots** (``frames/kill/`` positive, ``frames/nada/``
-   negative) — manually labelled stills (see ``frames/analise_*/STATUS.md``).
-   Each image is scored through the same feature pipeline as video frames
-   (visual + YOLO); audio stays NaN and windowed/spike features collapse to
-   the frame's own value (no neighbours), same handling as an old cache with
-   missing columns. Grouped by the recording SHA embedded in the filename
-   (``gt_<sha12>_f######.ext``) so a recording's own frames never split
-   across a GroupKFold fold; features are cached on disk keyed by
-   path+mtime so re-training doesn't redo YOLO on every click.
 
 ``groups`` carries the clip name / recording SHA so cross-source CV is honest.
 Audio bands always stay in.
@@ -33,7 +24,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import config as C  # noqa: E402
-from pipeline import derive, features, imgset  # noqa: E402
+from pipeline import derive, features  # noqa: E402
 
 GUARD_S = 2.0
 NEG_RATIO = 3.0
@@ -112,66 +103,6 @@ def iter_kill_clips() -> list[tuple[Path, str]]:
     return out
 
 
-FRAME_GROUP_RE = re.compile(r"^gt_([0-9a-f]{12})_f\d+\.")
-FRAME_EXTS = (".jpg", ".jpeg", ".png")
-
-
-def _frame_group(path: Path) -> str:
-    """Recording SHA embedded in the reviewed-screenshot filename, if any."""
-    m = FRAME_GROUP_RE.match(path.name)
-    return f"frame:{m.group(1)}" if m else f"frame:{path.stem}"
-
-
-def iter_review_frames() -> list[tuple[Path, int, str]]:
-    """(path, label, group_id) for every reviewed screenshot.
-
-    ``frames/kill/`` -> label 1, ``frames/nada/`` -> label 0. Group id is the
-    recording SHA parsed from the filename so a recording's frames stay
-    together in cross-validation.
-    """
-    out = []
-    for d, label in ((C.FRAMES_DIR / "kill", 1), (C.FRAMES_DIR / "nada", 0)):
-        if not d.is_dir():
-            continue
-        for p in sorted(d.iterdir()):
-            if p.suffix.lower() in FRAME_EXTS:
-                out.append((p, label, _frame_group(p)))
-    return out
-
-
-def _frame_cache_path() -> Path:
-    return C.MODEL_DIR / "frames_review_cache.npz"
-
-
-def _frame_cache_key(p: Path) -> str:
-    try:
-        return p.resolve().relative_to(C.ROOT.resolve()).as_posix()
-    except ValueError:
-        return str(p.resolve())
-
-
-def _load_frame_cache() -> dict[str, tuple[float, np.ndarray]]:
-    cp = _frame_cache_path()
-    if not cp.exists():
-        return {}
-    try:
-        d = np.load(cp, allow_pickle=True)
-        return {k: (float(m), r) for k, m, r in zip(d["keys"], d["mtimes"], d["rows"])}
-    except Exception:  # noqa: BLE001
-        return {}
-
-
-def _save_frame_cache(cache: dict[str, tuple[float, np.ndarray]]) -> None:
-    if not cache:
-        return
-    C.MODEL_DIR.mkdir(parents=True, exist_ok=True)
-    np.savez_compressed(
-        _frame_cache_path(),
-        keys=np.array(list(cache.keys())),
-        mtimes=np.array([v[0] for v in cache.values()], dtype=np.float64),
-        rows=np.vstack([v[1] for v in cache.values()]).astype(np.float32))
-
-
 def available_sources() -> list[dict]:
     """Everything that can train the model right now."""
     out = []
@@ -186,14 +117,6 @@ def available_sources() -> list[dict]:
             "file": g["file"], "kind": "gravacao", "cuts": len(g["intervals"]),
             "seconds": round(sum(e - s for s, e in g["intervals"]), 1),
             "cached_only": g["has_cache"] and not g["has_file"],
-        })
-    review = iter_review_frames()
-    if review:
-        n_kill = sum(1 for _, label, _ in review if label == 1)
-        n_nada = sum(1 for _, label, _ in review if label == 0)
-        out.append({
-            "file": f"{C.FRAMES_DIR.name}/kill+nada", "kind": "frame_review",
-            "pos": n_kill, "neg": n_nada, "seconds": None, "cached_only": False,
         })
     return out
 
@@ -225,26 +148,28 @@ def training_status() -> dict:
     return {"lotes": lotes}
 
 
-def build(progress=None, use_kill_clips: bool = True, use_review_frames: bool = True):
+def build(progress=None, use_kill_clips: bool = True):
     """Rows for the scorer.
 
     ``use_kill_clips`` (default True): kill clips in ``clipes_kill/`` are extra
-    positives on top of the recordings. ``use_review_frames`` (default True):
-    reviewed screenshots in ``frames/kill|nada/`` are extra positives/negatives.
-    Both False = recordings only (the old ``--raw-only``). Audio bands always
-    stay in.
+    positives on top of the recordings. ``False`` = recordings only (the old
+    ``--raw-only``). Either way the negatives come from the recordings and the
+    audio bands stay in.
     """
     clips = iter_kill_clips() if use_kill_clips else []
-    review = iter_review_frames() if use_review_frames else []
     groups_meta = {sha: g for sha, g in _cut_groups().items()
                    if g["has_cache"] or g["has_file"]}
-    if not groups_meta and not clips and not review:
+    if not groups_meta and not clips:
         raise RuntimeError(
             "Sem fontes de treino. Traga uma gravacao com cortes aprovados "
-            f"(projeto/edicao.json) para a raiz, clipes de kill em "
-            f"{C.KILL_CLIPS_DIR.name}/ e/ou frames revisados em "
-            f"{C.FRAMES_DIR.name}/kill e {C.FRAMES_DIR.name}/nada.")
-    total_units = len(groups_meta) + len(clips) + (1 if review else 0)
+            f"(projeto/edicao.json) para a raiz e/ou clipes de kill em "
+            f"{C.KILL_CLIPS_DIR.name}/.")
+    if not groups_meta:
+        raise RuntimeError(
+            "Ha clipes de kill, mas nenhuma gravacao bruta com cortes aprovados "
+            "(nem cache) para servir de NEGATIVO. Mantenha ao menos uma gravacao "
+            "com projeto/edicao.json na raiz do BODYCAM.")
+    total_units = len(groups_meta) + len(clips)
 
     rng = np.random.default_rng(SEED)
     Xs, ys, groups, tstamps = [], [], [], []
@@ -309,44 +234,6 @@ def build(progress=None, use_kill_clips: bool = True, use_review_frames: bool = 
                           "pos": int(len(keep)), "neg": 0})
         print(f"  {mp4.name}: {len(keep)} pos (kill clip)")
 
-    # 3) reviewed screenshots: frames/kill (positive) + frames/nada (negative)
-    if review:
-        if progress:
-            progress(step / max(1, total_units), f"frames revisados ({len(review)})")
-        step += 1
-        cache = _load_frame_cache()
-        new_cache: dict[str, tuple[float, np.ndarray]] = {}
-        cache_dirty = False
-        yolo_model = None
-        kept = {1: 0, 0: 0}
-        for p, label, gid in review:
-            key = _frame_cache_key(p)
-            mtime = p.stat().st_mtime
-            hit = cache.get(key)
-            if hit is not None and hit[0] == mtime:
-                row = hit[1]
-            else:
-                if yolo_model is None:
-                    yolo_model = imgset._load_yolo()
-                row = imgset.image_row(p, yolo_model)
-                if row is None:
-                    print(f"  ilegivel: {p.name}")
-                    continue
-                cache_dirty = True
-            new_cache[key] = (mtime, row)
-            Xa, names = derive.augment(np.zeros(1, np.float32), row[None, :],
-                                       list(features.FEATURE_NAMES), C.FPS_ANALYSIS)
-            Xs.append(Xa)
-            ys.append(np.array([float(label)]))
-            groups.append(np.array([gid]))
-            tstamps.append(np.zeros(1))
-            kept[label] += 1
-        if cache_dirty or len(new_cache) != len(cache):
-            _save_frame_cache(new_cache)
-        src_stats.append({"file": f"{C.FRAMES_DIR.name}/kill+nada", "kind": "frame_review",
-                          "pos": kept[1], "neg": kept[0]})
-        print(f"  frames revisados: {kept[1]} pos / {kept[0]} neg")
-
     if not Xs:
         raise RuntimeError("Sem dados de treino apos ler as fontes.")
 
@@ -354,9 +241,8 @@ def build(progress=None, use_kill_clips: bool = True, use_review_frames: bool = 
     y = np.concatenate(ys)
     if y.min() == y.max():
         raise RuntimeError(
-            "So ha exemplos de uma classe. Falta um NEGATIVO: uma gravacao com "
-            "trecho fora dos cortes aprovados, ou frames em "
-            f"{C.FRAMES_DIR.name}/nada/.")
+            "So ha exemplos de uma classe. Precisa de ao menos uma gravacao com "
+            "cortes aprovados (positivos) E trecho fora dos cortes (negativos).")
     if progress:
         progress(1.0, f"{len(y)} linhas")
     return {
