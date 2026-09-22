@@ -2,12 +2,13 @@
 
 Positives/negatives come from :mod:`pipeline.dataset` (the approved cuts).
 Validation is grouped by source when more than one gameplay is on disk, and
-falls back to a temporal hold-out (last 25 % of the timeline) when everything
-comes from a single recording.
+requires at least two known recording groups. Unknown origins are excluded
+from validation but retained for the final training fit.
 """
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -42,35 +43,84 @@ def _prf(y, p, thr):
     return {"precision": round(prec, 3), "recall": round(rec, 3), "f1": round(f1, 3)}
 
 
-def _evaluate(X, y, g, tt):
-    """Return (report dict, held-out scores, held-out labels).
+def _cv_groups(g):
+    """Unify recording IDs across video/stills; unresolved origins never enter CV.
 
-    The held-out scores are genuine out-of-fold / out-of-time predictions and
-    are what the interest threshold is calibrated on.
+    Optional local provenance maps legacy group IDs (e.g. kill:clip or
+    unknown:frame:name) to the original recording's full SHA-256.
     """
+    manifest = C.MODEL_DIR / "provenance.json"
+    mapping = json.loads(manifest.read_text(encoding="utf8")) if manifest.exists() else {}
+    result = []
+    for value in g:
+        value = str(value)
+        if value in mapping:
+            sha = mapping[value]
+            if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-fA-F]{64}", sha):
+                raise ValueError("provenance.json values must be full recording SHA-256 hashes")
+            value = sha.lower()[:12]
+        elif value.startswith("frame:"):
+            value = value[6:]
+        elif value.startswith(("unknown:", "kill:")):
+            value = ""
+        result.append(value.lower())
+    return np.asarray(result)
+
+
+def _evaluate(X, y, g, tt):
+    """Recording-disjoint OOF evaluation. Unknown provenance is excluded.
+
+    A single recording cannot estimate cross-recording generalization; no
+    frame-level or temporal fallback is presented as independent validation.
+    """
+    g = _cv_groups(g)
+    known = g != ""
+    X, y, g = X[known], y[known], g[known]
     n_groups = len(set(g))
-    if n_groups >= 2:
-        k = min(5, n_groups)
-        oof = np.zeros(len(y))
-        for tr, te in GroupKFold(k).split(X, y, g):
-            m = _model().fit(X[tr], y[tr])
-            oof[te] = m.predict_proba(X[te])[:, 1]
-        report = {"scheme": f"GroupKFold({k}) por fonte",
-                  "roc_auc": round(float(roc_auc_score(y, oof)), 4),
-                  "avg_precision": round(float(average_precision_score(y, oof)), 4),
-                  "n_holdout": int(len(y))}
-        return report, oof, y
-    cut = np.quantile(tt, 0.75)
-    tr, te = tt <= cut, tt > cut
-    if te.sum() < 20 or len(set(y[te])) < 2:
-        return {"scheme": "sem holdout confiavel (fonte unica, poucos dados)"}, None, None
-    m = _model().fit(X[tr], y[tr])
-    p = m.predict_proba(X[te])[:, 1]
-    report = {"scheme": "hold-out temporal (ultimos 25% da gravacao)",
-              "roc_auc": round(float(roc_auc_score(y[te], p)), 4),
-              "avg_precision": round(float(average_precision_score(y[te], p)), 4),
-              "n_holdout": int(te.sum())}
-    return report, p, y[te]
+    report = {"scheme": "recording-disjoint GroupKFold", "n_cv_groups": n_groups,
+              "n_excluded_unknown_origin": int((~known).sum()), "n_folds": 0,
+              "folds": [], "threshold_evaluation": "fixed 0.5; not tuned on OOF"}
+    for key in ("roc_auc", "avg_precision"):
+        report.update({key + "_mean": None, key + "_std": None,
+                       key + "_valid_folds": 0})
+    report["n_holdout"] = 0
+    if n_groups < 2:
+        report["limitation"] = "At least two known recording groups are required"
+        return report, None, None
+    k = min(5, n_groups)
+    report["n_folds"] = k
+    oof = np.full(len(y), np.nan)
+    for fold, (tr, te) in enumerate(GroupKFold(k).split(X, y, g), 1):
+        detail = {"fold": fold, "n_train": len(tr), "n_test": len(te),
+                  "train_pos": int(y[tr].sum()), "train_neg": int((y[tr] == 0).sum()),
+                  "test_pos": int(y[te].sum()), "test_neg": int((y[te] == 0).sum())}
+        if len(set(y[tr])) < 2:
+            detail.update(status="skipped: single-class training fold", roc_auc=None, avg_precision=None)
+        else:
+            p = _model().fit(X[tr], y[tr]).predict_proba(X[te])[:, 1]
+            oof[te] = p
+            both = len(set(y[te])) == 2
+            detail.update(status="evaluated", **_prf(y[te], p, 0.5),
+                          roc_auc=float(roc_auc_score(y[te], p)) if both else None,
+                          avg_precision=float(average_precision_score(y[te], p)) if both else None)
+        report["folds"].append(detail)
+    for key in ("roc_auc", "avg_precision"):
+        values = [f[key] for f in report["folds"] if f[key] is not None]
+        report[key + "_mean"] = float(np.mean(values)) if values else None
+        report[key + "_std"] = float(np.std(values)) if values else None
+        report[key + "_valid_folds"] = len(values)
+    valid = np.isfinite(oof)
+    report["n_holdout"] = int(valid.sum())
+    report["n_unscored_known_origin"] = int((~valid).sum())
+    if not valid.all():
+        report["limitation"] = "Some folds lack both training classes; pooled metrics cover scored rows only"
+    if not valid.any() or len(set(y[valid])) < 2:
+        return report, None, None
+    p, labels = oof[valid], y[valid]
+    report.update(roc_auc=float(roc_auc_score(labels, p)),
+                  avg_precision=float(average_precision_score(labels, p)),
+                  **_prf(labels, p, 0.5), evaluation_threshold=0.5)
+    return report, p, labels
 
 
 def _importances(model, X, y, names, n_repeats=6):
@@ -104,14 +154,15 @@ def train(progress=None, raw_only: bool = False) -> dict:
         progress(0.8, "treinando modelo final")
     model = _model().fit(X, y)
 
-    # Calibrate the interest threshold on genuine held-out predictions.
+    # Operational suggestion only: tuning and reporting on the same OOF data
+    # would be optimistic. Primary PR/F1 above use the predeclared 0.5 threshold.
+    thr = 0.5
     if held_p is not None:
-        pos = np.sort(held_p[held_y == 1])
+        pos = held_p[held_y == 1]
         thr = float(np.clip(np.quantile(pos, 0.35), 0.3, 0.8)) if len(pos) else 0.5
-        report.update(_prf(held_y, held_p, thr))
-    else:
-        pos = np.sort(model.predict_proba(X)[:, 1][y == 1])
-        thr = float(np.clip(np.quantile(pos, 0.5), 0.3, 0.85)) if len(pos) else 0.5
+        report["tuned_threshold_diagnostic"] = {
+            "threshold": thr, **_prf(held_y, held_p, thr),
+            "limitation": "Selected and measured on the same OOF predictions; not independent"}
 
     if progress:
         progress(0.9, "medindo importancia das features")

@@ -1,24 +1,23 @@
-# VieirasPlay — produção de Shorts
+# VieirasPlay — Shorts production
 
-Para tarefas de montagem de gameplay nesta pasta, leia e siga
-[harness/README.md](harness/README.md) antes de selecionar ou renderizar vídeos.
+For gameplay editing tasks in this directory, read and follow
+[harness/README.md](harness/README.md) before selecting or rendering videos.
 
-O usuário aprovou explicitamente o **segundo lote, Shorts 06 a 10**, como padrão
-para os próximos vídeos. A referência é `shorts_bodycam_lote2/`, não os arquivos
-`SHORT_*.mp4`, os BAT antigos ou o primeiro lote com música sintetizada.
+The user explicitly approved the **second batch, Shorts 06 through 10**, as the
+standard for future videos. The reference is `shorts_bodycam_lote2/`, not the
+`SHORT_*.mp4` files, old BAT scripts, or the first batch with synthesized music.
 
-- Padrão: cinco Shorts por lote, 20–22 s, 1080×1920, 60 fps.
-- Usar `audio/beat_phonk.wav`, com áudio da gameplay na mixagem. Não substituir
-  por música gerada nem mudar sua afinação/velocidade sem pedido do usuário.
-- Manter a apresentação VieirasPlay aprovada, cortes musicais, ação legível,
-  replays identificados e seleção visual dos confrontos.
-- Detectar duplicatas pelo conteúdo e consultar os intervalos já usados.
-- Preservar fontes, música, lotes anteriores e scripts históricos. Criar cada
-  lote em uma pasta nova e continuar a numeração dos Shorts.
-- Usar o harness executável para inventário, plano, renderização e validação;
-  a inspeção editorial e a revisão visual continuam sendo responsabilidade do agente.
-- Entregar os cinco MP4, `ASSISTIR.html`, plano, histórico e relatório técnico.
-- Prosseguir nas etapas locais autorizadas sem pedir confirmação do padrão.
-  Mudanças explícitas do usuário prevalecem sobre estes defaults.
-- Criar os arquivos não autoriza publicar no YouTube ou alterar o canal.
-
+- Default: five Shorts per batch, 20–22 s, 1080×1920, 60 fps.
+- Use `audio/beat_phonk.wav`, mixed with gameplay audio. Do not replace it with
+  generated music or change its pitch/speed unless the user requests it.
+- Preserve the approved VieirasPlay presentation, musical cuts, readable action,
+  labelled replays, and visual selection of encounters.
+- Detect duplicates by content and check previously used intervals.
+- Preserve sources, music, previous batches, and historical scripts. Create each
+  batch in a new directory and continue the Short numbering.
+- Use the executable harness for inventory, planning, rendering, and validation;
+  editorial inspection and visual review remain the agent's responsibility.
+- Deliver the five MP4 files, `ASSISTIR.html`, plan, history, and technical report.
+- Proceed with authorized local steps without asking to reconfirm the standard.
+  Explicit user changes take precedence over these defaults.
+- Creating files does not authorize publishing to YouTube or changing the channel.

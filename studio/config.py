@@ -4,6 +4,9 @@ Everything here is resolved relative to the BODYCAM working folder so the
 studio can be launched from any directory, exactly like the harness.
 """
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "harness"))
+from tooling import resolve_tool
 
 ROOT = Path(__file__).resolve().parents[1]          # ...\BODYCAM
 HARNESS = ROOT / "harness"
@@ -33,8 +36,8 @@ def rel_source(name: str) -> str:
     except ValueError:
         return Path(name).name
 
-FFMPEG = ROOT / "_tools" / "ffmpeg.exe"
-FFPROBE = ROOT / "_tools" / "ffprobe.exe"
+FFMPEG = resolve_tool("ffmpeg", ROOT)
+FFPROBE = resolve_tool("ffprobe", ROOT)
 
 YOLO_WEIGHTS = MODEL_DIR / "yolov8n.pt"
 SCORER_PATH = MODEL_DIR / "scorer.joblib"

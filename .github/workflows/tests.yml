@@ -1,0 +1,29 @@
+name: Tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: studio/requirements.txt
+      - name: Install FFmpeg and FFprobe
+        shell: pwsh
+        run: choco install ffmpeg --yes --no-progress
+      - name: Install Python dependencies
+        run: python -m pip install -r studio/requirements.txt
+      - name: Verify media tools
+        shell: pwsh
+        run: |
+          ffmpeg -version
+          ffprobe -version
+      - name: Run tests without private media or credentials
+        run: python -m pytest studio/tests -q

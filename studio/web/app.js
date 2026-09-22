@@ -73,10 +73,10 @@ async function loadModel() {
     <div class="kv">
       <div><span>ROC-AUC (holdout)</span><b>${fmt(v.roc_auc)}</b></div>
       <div><span>Avg precision</span><b>${fmt(v.avg_precision)}</b></div>
-      <div><span>Precisão @ thr</span><b>${fmt(v.precision)}</b></div>
-      <div><span>Recall @ thr</span><b>${fmt(v.recall)}</b></div>
-      <div><span>F1 @ thr</span><b>${fmt(v.f1)}</b></div>
-      <div><span>Threshold</span><b>${fmt(m.suggested_threshold, 2)}</b></div>
+      <div><span>Precisão @ ${fmt(v.evaluation_threshold ?? m.suggested_threshold, 2)}</span><b>${fmt(v.precision)}</b></div>
+      <div><span>Recall @ ${fmt(v.evaluation_threshold ?? m.suggested_threshold, 2)}</span><b>${fmt(v.recall)}</b></div>
+      <div><span>F1 @ ${fmt(v.evaluation_threshold ?? m.suggested_threshold, 2)}</span><b>${fmt(v.f1)}</b></div>
+      <div><span>Threshold sugerido</span><b>${fmt(m.suggested_threshold, 2)}</b></div>
       <div><span>Positivos / negativos</span><b>${m.n_pos ?? "—"} / ${m.n_neg ?? "—"}</b></div>
       <div><span>Features</span><b>${m.n_features ?? (m.feature_names || []).length}</b></div>
       <div><span>Fontes de treino</span><b>${m.n_sources}</b></div>

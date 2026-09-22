@@ -19,7 +19,9 @@ All supervision is **raw gameplay** now (no rendered Shorts, no music):
    across a GroupKFold fold; features are cached on disk keyed by
    path+mtime so re-training doesn't redo YOLO on every click.
 
-``groups`` carries the clip name / recording SHA so cross-source CV is honest.
+``groups`` carries source IDs. The evaluator canonicalizes recording/still IDs
+and excludes unproven origins from CV (see docs/DATASET.md). Final fitting can
+still use unknown-origin examples.
 Audio bands always stay in.
 """
 from __future__ import annotations
@@ -117,9 +119,9 @@ FRAME_EXTS = (".jpg", ".jpeg", ".png")
 
 
 def _frame_group(path: Path) -> str:
-    """Recording SHA embedded in the reviewed-screenshot filename, if any."""
+    """Recording SHA, or an explicit unknown-origin marker (never a CV group)."""
     m = FRAME_GROUP_RE.match(path.name)
-    return f"frame:{m.group(1)}" if m else f"frame:{path.stem}"
+    return f"frame:{m.group(1)}" if m else f"unknown:frame:{path.stem}"
 
 
 def iter_review_frames() -> list[tuple[Path, int, str]]:
@@ -303,7 +305,7 @@ def build(progress=None, use_kill_clips: bool = True, use_review_frames: bool = 
             keep = np.arange(len(t))
         Xs.append(Xa[keep])
         ys.append(np.ones(len(keep)))
-        groups.append(np.full(len(keep), gid[:24]))
+        groups.append(np.full(len(keep), gid))
         tstamps.append(t[keep])
         src_stats.append({"file": mp4.name, "kind": "kill_clip",
                           "pos": int(len(keep)), "neg": 0})

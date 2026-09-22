@@ -1,287 +1,234 @@
 # BODYCAM Studio
 
-Ambiente web **local** que analisa uma gravação de gameplay, marca os momentos
-de interesse com um modelo treinado nos lotes já aprovados, monta os Shorts no
-padrão VieirasPlay e renderiza pelo harness existente.
+A **local** web interface that analyzes gameplay recordings, suggests moments
+of interest using a model trained on approved edits, assembles Shorts in the
+VieirasPlay preset, and renders through the existing harness.
 
-**Nada aqui usa LLM.** O texto (título), o tema e o nome de cada Short são
-digitados por você. O modelo só aponta *onde* estão os bons momentos.
+No LLM is used. You enter each Short's title, theme, and name. The model
+suggests where interesting moments may occur; editorial review is still needed.
 
-> Coleta de métricas do YouTube (feedback real dos Shorts para modelos de
-> ranking): **[studio/youtube/README.md](youtube/README.md)**. Subsistema
-> desacoplado — OAuth 2.0, Data API v3 + Analytics API, snapshots históricos em
-> SQLite, CLI `python studio/youtube/collector.py`.
+The optional [YouTube feedback collector](youtube/README.md) uses OAuth 2.0,
+Data API v3 and Analytics API, with historical snapshots in SQLite. Its CLI is
+`python studio/youtube/collector.py`.
 
----
-
-## 1. Como rodar
+## 1. Run the Studio
 
 ```powershell
-# a partir da pasta BODYCAM, uma vez:
-pip install -r studio/requirements.txt
-
-# sempre que quiser usar:
+# From the repository root, after activating your virtual environment:
+python -m pip install -r studio/requirements.txt
 python studio/app.py
 ```
 
-Abre em **http://127.0.0.1:8765**. É um servidor só de `localhost`, sem login,
-sem nada saindo da máquina. Para parar: `Ctrl+C` na janela.
+Open **http://127.0.0.1:8765**. This is a localhost server without authentication.
+Weight downloads and the optional YouTube integration may access the network.
+Stop it with `Ctrl+C` in the terminal.
 
-### Pastas (BODYCAM/)
+### Directories
 
-| pasta | o que guarda |
-|---|---|
-| `gravacoes/` | gravações brutas de gameplay (`.mkv`/`.mp4`). Fonte de análise e de negativos de treino. O studio também aceita arquivo solto na raiz. |
-| `clipes_kill/` | clipes crus de 10–15 s do momento do abate — positivos de treino. |
-| `frames/kill/` · `frames/nada/` | **prints** rotulados (imagem parada). Uma foto = uma linha de features → `studio/pipeline/imgset.py`. |
-| `cliping/lote<n>/` | saída dos lotes: Shorts finais + `projeto/edicao.json`. Lotes antigos seguem em `shorts_bodycam*/`. |
-| `studio/model/kill_refs/` | prints de kill para calibrar as ROIs / o verde de aliado. |
+| Directory | Contents |
+| --- | --- |
+| `gravacoes/` | Raw `.mkv`/`.mp4` gameplay for analysis and training negatives. Root-level source files are also supported. |
+| `clipes_kill/` | Raw kill clips, typically 10–15 seconds, used as positive training examples. |
+| `frames/kill/`, `frames/nada/` | Labelled positive/negative stills. One image becomes one feature row through `pipeline/imgset.py`. |
+| `cliping/lote<n>/` | Rendered Shorts and `projeto/edicao.json`. Older batches may use `shorts_bodycam*/`. |
+| `studio/model/kill_refs/` | Reference screenshots for ROI and friendly-HUD calibration. |
 
-Pré-requisitos que já estão na máquina: Python 3.13, `_tools/ffmpeg.exe` /
-`ffprobe.exe`, `torch` (CPU), `opencv`, `scipy`, `pillow`. O `pip install` acima
-acrescenta `fastapi`, `uvicorn`, `scikit-learn`, `joblib` e `ultralytics` (YOLO).
-Os pesos `studio/model/yolov8n.pt` já estão baixados.
+Install all dependencies in a virtual environment; see the
+[installation guide](../README.md#requirements). Windows/Python 3.13 is the
+tested environment. FFmpeg/FFprobe are found in `_tools/` first, then PATH.
+YOLO weights, a fitted scorer, datasets, and music are not included in a clone.
+Read [dataset provenance](../docs/DATASET.md) before training.
 
----
+## 2. Editing workflow
 
-## 2. Fluxo na página
+The current application interface uses Portuguese labels. The workflow below
+describes the controls in English; documentation translation does not change
+the application UI or filesystem names.
 
-Em **Fonte → Unir vídeos antes da edição**, adicione duas ou mais gravações,
-ordene com ↑/↓ e clique em **Unir vídeos**. Ao terminar, o arquivo unido fica
-selecionado: clique em **Analisar** e siga o fluxo normal. Vídeos curtos também
-aparecem na seleção.
+In the source section, add two or more recordings to the merge control, order
+them with the arrow buttons, and start merging. The merged file becomes the
+selected source. Analyze it to continue. Short videos are also listed.
 
-A união cria `gravacoes/unidos_<id>.mp4` e um mapa `.origens.json`, preservando
-os arquivos originais. Mantém o áudio da gameplay; trechos sem áudio recebem
-silêncio. Normaliza resolução e FPS pela primeira gravação (até 60 fps), com
-barras quando necessário, sem esticar a imagem. A preparação recodifica em
-H.264 e pode demorar em gravações longas. Cópias idênticas são recusadas pelo
-SHA-256. Para renderizar e registrar o histórico, o plano volta aos arquivos e
-tempos originais. Um corte que atravesse a junção exige ajuste na timeline.
+Merging creates `gravacoes/unidos_<id>.mp4` and an `.origens.json` mapping,
+preserving originals. Gameplay audio is retained; silent segments receive
+silence. Resolution and frame rate follow the first recording, capped at
+60 fps, with padding rather than stretching. H.264 re-encoding can take time
+for long recordings. Identical content is rejected by SHA-256. Rendering plans
+map cuts back to original files/timestamps so history tracks their sources.
+A cut crossing a join boundary requires a timeline adjustment.
 
-| # | Seção | O que fazer |
-|---|---|---|
-| 1 | **Fonte** | Escolher a gravação (`.mkv`/`.mp4` em `gravacoes/` ou na raiz) e clicar **Analisar**. Roda uma vez por arquivo; o resultado fica em `studio/cache/<sha>/`. Um vídeo de 40 min leva ~6–8 min (YOLO em CPU); um clipe de 1–2 min, segundos. |
-| 2 | **Curva de interesse** | O gráfico mostra o score por segundo (verde), a linha de corte (vermelho tracejado) e os candidatos (azul). Clique na curva para espiar um frame. Ajuste **Shorts no lote**, **Cortes por short**, **Espalhamento** (quanto vasculhar em volta de cada região quente para pôr cada corte num pico próprio — maior = mais tempo morto descartado), a **Faixa de áudio** e a **Entrada (beats)** e clique **Agrupar automaticamente**. |
-| 3 | **Shorts** | Cada card traz a miniatura do pico e os campos **Nome**, **Título**, **Tema/tag**, **Cor**, **Beats/corte**, **Faixa** (override) e **Entrada** (override). A lista de cortes tem nudge de ±0,5 s, replay, "ver" (atualiza a miniatura) e remover. A duração fica **verde** entre 20 e 22 s, **vermelha** fora. **＋ corte** adiciona um corte no fim. |
-| 4 | **Gerar plano** | Grava `harness/plano_<lote>.json` e roda o `check` do harness. Mostra "✓ plano válido" ou o erro exato. Só com o plano válido o botão **Renderizar** libera. |
-| 5 | **Renderização** | Chama `shorts.py render` e depois `verify` (barra + log ao vivo). |
-| 6 | **Revisão** | Grade com os MP4 prontos, miniatura (`<nome>.jpg`), LUFS medido e link para o `ASSISTIR.html` do lote. |
+| Step | Section | Action |
+| --- | --- | --- |
+| 1 | Source | Select a recording from `gravacoes/` or the root and analyze it. Results are cached in `studio/cache/<sha>/`. Runtime depends on source length and hardware. |
+| 2 | Interest curve | Inspect the green score curve, red threshold, and blue candidates. Click to preview a frame. Set batch size, cuts per Short, spread, audio track, and entry beat, then group automatically. Higher spread searches farther around each region for separate action peaks. |
+| 3 | Shorts | Review each peak thumbnail; edit name, title, theme/tag, color, beats per cut, and per-Short music/entry overrides. Nudge cuts by ±0.5 s, preview, remove, add, or mark replays. Duration is green at 20–22 s and red outside that range. |
+| 4 | Generate plan | Save `harness/plano_<batch>.json` and run harness `check`. Rendering becomes available only after validation succeeds. |
+| 5 | Render | Run `shorts.py render`, followed by `verify`, with progress and live logs. |
+| 6 | Review | Inspect final MP4 files, thumbnails, measured LUFS, and the batch's `ASSISTIR.html` player. |
 
----
+## 3. Audio tracks and beat grids
 
-## 3. A faixa de áudio
+The selector lists `.wav`/`.mp3` files in `audio/`, plus root-level files for
+backward compatibility. Tracks with a confirmed BPM and grid offset in
+`defaults.json` or an approved plan can reuse that grid. Historical local
+examples are shown below; the audio files are not distributed.
 
-O seletor lista todo `.wav`/`.mp3` de `audio/` (e da raiz, por compatibilidade).
+| File | BPM | Grid offset |
+| --- | --- | --- |
+| `beat_phonk.wav` | 144 | 0 s |
+| `bodycam_hook_dark_phonk.wav` | 140 | 0.045 s |
+| `slow_dark_russian_phonk.mp3` | 130 | 0.917 s |
+| `slow_dark_russian_phonk1.mp3` | 148 | 1.217 s |
 
-- **Faixas com grade conhecida** (BPM + offset já confirmados em `defaults.json`
-  ou num plano aprovado) entram prontas. Hoje:
+For an unknown grid, use beat analysis. It estimates BPM/phase from the
+percussion envelope above 1800 Hz and offers candidates. Choose one after
+review; evidence is saved in the plan. The harness rejects tracks without
+grid evidence.
 
-  | arquivo | BPM | offset da grade |
-  |---|---|---|
-  | `beat_phonk.wav` | 144 | 0 |
-  | `bodycam_hook_dark_phonk.wav` | 140 | 0,045 s |
-  | `slow_dark_russian_phonk.mp3` | 130 | 0,917 s |
-  | `slow_dark_russian_phonk1.mp3` | 148 | 1,217 s |
+Music entry is `grid_offset + n * 60 / BPM`, keeping it on a beat. If an entry
+would extend beyond the track, it moves backward in four-beat increments.
+Cut duration follows `beats * 60 / BPM`: six eight-beat cuts total 20 seconds
+only at 144 BPM. `fit_grid` chooses a cut count and beat count to fit 20–22 s.
 
-- **Faixa sem grade conhecida** (hoje: `phonk_fps.wav`): aparece o botão
-  **Analisar batida**. Ele estima o BPM/fase pelo envelope de percussão
-  (>1800 Hz) e mostra os melhores candidatos. Você escolhe um; a evidência da
-  medição vai junto no plano — o harness recusa faixa sem evidência.
+| BPM | Example grid | Total |
+| --- | --- | --- |
+| 144 | 6 × 8 beats | 20.00 s |
+| 140 | 6 × 8 beats | 20.57 s |
+| 130 | 5 × 9 beats | 20.77 s |
+| 148 | 6 × 9 beats | 21.89 s |
 
-- **Entrada (beats)**: onde a música começa dentro do Short. É sempre
-  `offset_da_grade + n · 60/BPM`, então cai na batida. Se `n` grande fizer a
-  música passar do fim do arquivo, recua sozinho de 4 em 4 beats.
+Each Short can override its track and entry point.
 
-- **Comprimento do corte segue o BPM da faixa.** Como `duração = beats · 60/BPM`,
-  6 cortes de 8 beats só dão 20 s a 144 BPM. Para outra faixa o `fit_grid`
-  escolhe nº de cortes × beats para o Short cair em 20–22 s na grade dela:
+## 4. Interest model
 
-  | BPM | escolha | total |
-  |---|---|---|
-  | 144 | 6 × 8 beats | 20,00 s |
-  | 140 | 6 × 8 beats | 20,57 s |
-  | 130 | 5 × 9 beats | 20,77 s |
-  | 148 | 6 × 9 beats | 21,89 s |
+Pretrained COCO `yolov8n` supplies person count, confidence, area, center, and
+summed-area features. Before counting, bounding boxes pass plausibility filters
+(`PERSON_MIN_CONF`, `PERSON_MAX_AREA` in `config.py`) to reduce large false
+person detections on menus/loadout screens. Remaining boxes are classified by
+the green friendly-HUD outline heuristic, producing `enemy_count`,
+`enemy_area`, and `enemy_center`. These are imperfect cues, not verified kills.
 
-- Cada Short pode ter **faixa e entrada próprias** no card (útil para variar,
-  como o lote 15 fez com dois beats diferentes).
+At **3 FPS**, the pipeline also extracts global/central motion, brightness,
+contrast, saturation, red/flash/dark fractions, edge density, friendly-green
+coverage, RMS/high/low audio bands, and the central hitmarker signal
+`hit_center`. The current HUD implementation uses central marker cues rather
+than a kill-feed ROI.
 
----
+`derive.py` adds windowed maxima/means over approximately ±1.5 s, spikes above
+a local baseline of roughly ±4 s, and `idle_flag`/`walk_flag`: **70 features**
+in total. Combat-related spikes help locate candidates but do not prove kills.
 
-## 4. O modelo de interesse
+The scorer is scikit-learn's `HistGradientBoostingClassifier`. Training uses
+raw gameplay, not rendered Shorts or added music. Positives include approved
+source intervals, raw kill-clip frames, and reviewed positive stills. Negatives
+come from outside approved intervals or reviewed negative stills. Missing
+features can remain `NaN`. `--raw-only` excludes kill clips and reviewed stills,
+using recordings with approved cuts only. ROI and friendly-green settings
+remain provisional and require calibration against suitable screenshots.
 
-- **YOLO pré-treinado (COCO, `yolov8n`)** roda como está e dá, por frame:
-  `person_count/conf/area/center/area_sum`. Antes de contar, cada caixa passa
-  por um filtro de plausibilidade (`PERSON_MIN_CONF`, `PERSON_MAX_AREA` em
-  `config.py`) — sem isso, telas sem gameplay (o tablet de loadout aberto,
-  matchmaking) viram uma "pessoa" gigante e de baixa confiança cobrindo quase
-  a tela toda. Cada caixa que sobra é classificada **aliado × inimigo** pelo
-  contorno verde do HUD (aliado tem, inimigo não) — daí `enemy_count/area/center`,
-  que é o que interessa numa cena de kill.
-- Mais features baratas a **3 fps**: movimento global e central, brilho,
-  contraste, saturação, fração de vermelho, de flash, de escuro, densidade de
-  borda, `friendly_green` (quanto do verde de aliado aparece na tela); 3 bandas
-  de áudio (RMS, agudos, graves); e o **sinal de kill** `hit_center` (excesso
-  de bordas no centrinho — ticks do hitmarker). Bodycam não tem killfeed na
-  tela, então não existe ROI pra isso.
-- `derive.py` acrescenta **máx e média em janela de ±1,5 s** de cada sinal e o
-  **pico acima da linha de base local** (~±4 s) de flash, vermelho, agudos,
-  graves, área de inimigo e `hit_center` — o que sobe num kill e **não** sobe
-  na caminhada; mais `idle_flag` e `walk_flag`. Total: **70 features**.
-- **Scorer** = `HistGradientBoostingClassifier` (scikit-learn). Treina em
-  **gameplay cru** (sem Shorts renderizados, sem música, áudio dentro):
-  - **positivos** = frames dos **clipes de kill** (`clipes_kill/*.mp4`, 10–15 s
-    cortados crus da gravação em volta do abate) + frames dentro dos cortes
-    aprovados dos `*/projeto/edicao.json`;
-  - **negativos** = frames bem fora dos cortes, na mesma gravação (do arquivo
-    **ou do cache** `cache/<sha>/`) — caminhada, menu, loot, tempo morto;
-  - `HistGradientBoosting` lida com `NaN`, então um cache antigo sem as colunas
-    novas ainda entra (as colunas faltantes viram `NaN`).
-- Checkbox **"ignorar clipes de kill"** (`--raw-only`): treina só nas gravações
-  com cortes aprovados.
-- **ROIs / verde de aliado são provisórios** — `KILL_ROI_*` e
-  `FRIENDLY_GREEN_*` em `config.py`, calibrar com um print real em
-  `studio/model/kill_refs/`.
-- `group.py` acha os **picos** da curva suavizada, agrupa candidatos próximos
-  (janela de 12 s) e escolhe as regiões mais quentes. Dentro de cada região
-  (largura = **Espalhamento** × o tamanho do Short, padrão 2,2×) ele põe cada
-  corte num **sub-pico próprio** e os ordena no tempo — a caminhada/recarga
-  entre eles fica de fora, como nos lotes montados à mão. Só cai em bloco
-  contíguo quando a região não tem sub-picos distintos suficientes.
-  **Espalhamento 1×** volta ao comportamento antigo (bloco de ~20 s corridos).
-  Cortes de Shorts diferentes nunca se sobrepõem.
+`group.py` detects peaks in the smoothed curve and groups nearby candidates
+with a 12-second cluster gap. Within a region spanning spread × Short length
+(default spread 2.2×), it seeks separate sub-peaks and orders cuts chronologically,
+removing travel/reload gaps where possible. When insufficient distinct peaks
+exist, it falls back to a contiguous region. Spread 1× approximates the older
+contiguous behavior. Proposed cuts across different Shorts avoid overlap.
 
-### Painel "0 · Modelo de interesse" (na página)
+### Model panel
 
-Mostra os indicadores lidos de `studio/model/scorer_meta.json`:
+The panel reads `studio/model/scorer_meta.json` and displays:
 
-- **ROC-AUC / average precision** na validação — `GroupKFold` por fonte quando há
-  ≥2 gravações, senão hold-out temporal (últimos 25 % de uma fonte só);
-- **precisão / recall / F1** no threshold sugerido;
-- positivos / negativos, nº de features, nº de fontes, fps de análise;
-- tabela das **fontes de treino** (cortes, duração, se veio só do cache);
-- **peso das features** (permutation importance) em barras.
+- ROC-AUC and Average Precision from the saved validation report. New runs use
+  recording-disjoint validation with at least two known origins; unknown origins
+  are excluded from validation.
+- Precision, recall, and F1. New runs use a fixed evaluation threshold of 0.5;
+  the operational suggested threshold is separate. Metrics tuned and measured
+  on the same OOF predictions are optimistic diagnostics.
+- Positive/negative counts, feature count, source count, and analysis FPS.
+- Training-source details, including cached-only sources.
+- Permutation importance bars, which are descriptive training-data statistics.
 
-**Retreinar**: botão **Treinar / retreinar** no painel, ou
-`python studio/pipeline/train.py`. Junta as **gravações brutas** (cortes
-aprovados = positivo, resto = negativo) com os **clipes de kill** de
-`clipes_kill/` (10–15 s crus, todo frame positivo). Áudio dentro. Usa o **cache
-de features** (`studio/cache/<sha>/`) quando a gravação sumiu do disco.
-`scorer_meta.json` grava `raw_only`, `source`, `n_kill_clips` e `audio_used`.
+Use the train/retrain control or `python studio/pipeline/train.py` to fit a model.
+This writes local model artifacts. Feature caches can supply recording rows
+when the original file is missing. Metadata includes `raw_only`, `source`,
+`n_kill_clips`, and `audio_used`.
 
-**Ignorar clipes de kill** (checkbox, ou `python studio/pipeline/train.py
---raw-only`): treina só nas gravações com cortes aprovados.
+Earlier experiments trained on rendered Shorts with too few negatives and
+without gameplay audio. The main scorer now uses raw gameplay and reviewed
+stills; the limitations of this supervision remain documented in the
+[model card](../MODEL_CARD.md).
 
-> Por que mudou de novo (2026-09-09): treinar só nos Shorts renderizados de
-> `melhores_shorts/` deu 262 linhas, sem negativo real de gameplay e com o áudio
-> descartado — o modelo virou "tem borrão de pessoa = interessante" e não pegava
-> kill. Agora o positivo é gameplay **cru** do abate (mesmo domínio que o modelo
-> pontua) e o negativo é caminhada/menu/loot real. As features `enemy_*` e
-> `hit_center` miram o kill em si — mas dependem de calibrar a ROI e o verde de
-> aliado com um print (`studio/model/kill_refs/`).
+## 5. Experimental status
 
----
+Read the [model card](../MODEL_CARD.md) for historical metrics, validation
+limitations, and the difference between old results and the revised evaluator.
+Old machine/session notes are preserved locally in ignored `legacy/local/`;
+they do not describe a fresh installation. Supply training data and fit a model
+locally before using scoring features.
 
-## 5. Estado de hoje (2026-09-07) — leia isto
+YOLO is a pretrained feature extractor. Cuts still need visual and editorial
+review. The interface has no undo/redo; reloading loses transient page state
+while retaining disk caches.
 
-- **A gravação de 40 min foi removida do disco** durante a sessão; no lugar
-  entrou `clipe_1.788.818.119.254.mp4` (91 s). Mas o **cache de features dela
-  sobreviveu** (`studio/cache/450d43fb…/`), então `train.py` ainda a usa — hoje
-  o treino roda com 2 fontes (mkv via cache + clipe).
-  - As gravações antigas (`clipe_*` / `clip_*` dos lotes 1–8) **não estão no
-    disco nem no `shorts_bodycam.zip`** (o zip só tem os Shorts renderizados) e
-    também não têm cache — essas não dá para recuperar para treino.
-  - A transferência entre fontes ainda é ruim (AUC ≈ 0,48). Traga mais gravações
-    variadas com cortes aprovados para a raiz e retreine.
-- **`shorts_bodycam_lote16/`** apareceu parcial (só `projeto/`, sem MP4), com
-  edits `71_AUTO`, `72_AUTO`… — nomes que o próprio studio gera. Ou seja, o
-  studio já foi usado da outra máquina. Esse lote **não foi mexido** por aqui.
-- O servidor `:8765` está no ar com o código atual (com a faixa de áudio).
+## 6. Files
 
-### O que funciona ponta a ponta (testado)
+| Path under `studio/` | Role |
+| --- | --- |
+| `config.py` | Paths, analysis constants, ROI and friendly-HUD settings. |
+| `pipeline/features.py` | FFmpeg decoding and 22 base signals cached in `cache/<sha>/features.npz`. |
+| `pipeline/derive.py` | Temporal windows, spikes, idle/walking flags; 70 total features. |
+| `pipeline/dataset.py` | Training rows from raw clips, approved recording intervals, and reviewed stills. |
+| `pipeline/imgset.py` | Still-image feature datasets and a separate experimental image scorer. |
+| `pipeline/train.py` | Fit/evaluate the main scorer; save `model/scorer.joblib` and `scorer_meta.json`. |
+| `pipeline/score.py` | Apply the scorer and cache interest curves. |
+| `pipeline/group.py` | Peaks, candidates, draft Shorts, `fit_grid`, and `music_start_for`. |
+| `pipeline/beatgrid.py` | Track registry and BPM/phase estimation. |
+| `pipeline/planbuild.py` | Write harness plans and run `check`. |
+| `pipeline/media.py` | Extract preview frames. |
+| `app.py` | FastAPI server and API. |
+| `web/index.html`, `web/app.js` | Single-page editing interface. |
+| `model/` | Local YOLO weights, trained scorers, and metadata. |
+| `cache/<sha>/` | Source features, scores, and frames; `sources.json` indexes sources. |
+| `model/kill_refs/` | ROI/HUD calibration screenshots. |
+| `tests/pipeline/` | Pipeline regression tests. |
+| `notebooks/modelo_elementos.ipynb` | Exploratory feature/model notebook using local data. |
 
-analisar → curva → agrupar → escolher faixa (inclusive não-144 BPM) →
-gerar plano → `check` do harness aprova → `render` + `verify` → grade de revisão
-com MP4 a −14 LUFS.
-
-### O que ainda é bruto
-
-- Modelo de fonte única (ver acima).
-- YOLO é detector pré-treinado usado como *feature*, não treinado com caixas
-  suas.
-- `find_peaks` acha regiões quentes e o **Espalhamento** já põe cada corte no
-  seu sub-pico (descartando o tempo morto entre eles); o recorte fino de ±0,5 s
-  ainda é seu, na timeline. Com o scorer atual fraco (AUC ≈ 0,54) os sub-picos
-  são pista fraca — o ganho grande vem de retreinar com **gravações brutas** e
-  as features de pico de combate.
-- Sem desfazer/refazer na página; recarregar zera o estado (o cache em disco
-  fica).
-
----
-
-## 6. Arquivos
-
-| caminho | papel |
-|---|---|
-| `config.py` | caminhos e constantes (fps, `KILL_ROI_HITMARKER`, `FRIENDLY_GREEN_*`, `KILL_CLIPS_DIR`…) |
-| `pipeline/features.py` | decodifica a fonte 1× via ffmpeg → 22 features base (inclui `enemy_*`, `hit_center`, `friendly_green`) → `cache/<sha>/features.npz` |
-| `pipeline/derive.py` | features temporais: janela ±1,5 s, picos locais de kill, `idle_flag`, `walk_flag` → 70 |
-| `pipeline/dataset.py` | colhe as linhas: `clipes_kill/*.mp4` + `*/projeto/edicao.json` (positivo) e o fora-dos-cortes (negativo) |
-| `pipeline/imgset.py` | prints de `frames/kill` `frames/nada` → `model/frames_dataset.csv` + `.npz`; `--train` treina `scorer_frames.joblib` |
-| `pipeline/train.py` | treina e calibra o scorer → `model/scorer.joblib` + `scorer_meta.json` |
-| `pipeline/score.py` | aplica o modelo → `cache/<sha>/score.json` |
-| `pipeline/group.py` | picos → candidatos → Shorts rascunho; `fit_grid`, `music_start_for` |
-| `pipeline/beatgrid.py` | registro de faixas + estimativa de BPM/fase |
-| `pipeline/planbuild.py` | escreve `harness/plano_<lote>.json` e roda o `check` |
-| `pipeline/media.py` | extrai frames avulsos para a UI |
-| `app.py` | servidor FastAPI + API |
-| `web/index.html`, `web/app.js` | a página (uma só) |
-| `model/` | `yolov8n.pt`, `scorer.joblib`, `scorer_meta.json` |
-| `cache/<sha>/` | features, score e frames por gravação; `sources.json` é o índice |
-| `model/kill_refs/` | prints de kill para calibrar `KILL_ROI_*` / `FRIENDLY_GREEN_*` |
-| `tests/pipeline/` | testes do dataset (clipes de kill + gravações) e do `derive.augment` |
-| `notebooks/modelo_elementos.ipynb` | mostra, com dados reais, os elementos que o scorer lê por frame + roda os testes |
-
-### Comandos equivalentes (sem a página)
+### CLI equivalents
 
 ```powershell
-python studio/pipeline/features.py "<video>"        # só extrai features
-python studio/pipeline/train.py                     # treina o scorer
-python studio/pipeline/score.py "<video>"           # gera a curva de interesse
-python studio/pipeline/group.py <sha>               # imprime os Shorts rascunho
-python studio/pipeline/beatgrid.py                  # lista faixas e grades
-python studio/pipeline/beatgrid.py "<faixa>.wav"    # estima BPM/fase de uma faixa
-python studio/pipeline/imgset.py --train            # dataset de features dos prints + treina
-python -m pytest studio/tests/pipeline -q           # testes do pipeline
+python studio/pipeline/features.py "<video>"       # Extract features
+python studio/pipeline/train.py                    # Train the scorer
+python studio/pipeline/score.py "<video>"          # Generate an interest curve
+python studio/pipeline/group.py <sha>              # Print draft Shorts
+python studio/pipeline/beatgrid.py                 # List tracks and grids
+python studio/pipeline/beatgrid.py "<track>.wav"   # Estimate BPM/phase
+python studio/pipeline/imgset.py --train           # Train the separate image experiment
+python -m pytest studio/tests/pipeline -q          # Run pipeline tests
 ```
 
-### Dataset de features a partir de prints
+### Still-image feature dataset
 
-`studio/pipeline/imgset.py` transforma imagens paradas em linhas de features —
-sem áudio, sem sinais temporais (uma foto não tem os dois): `motion` = 0,
-`audio_*` = vazio; o resto (visual + `person_*` + `enemy_*` + `hit_center` +
-`friendly_green`) é preenchido.
+`pipeline/imgset.py` converts labelled stills to feature rows. A still has no
+audio or inter-frame motion: motion is zero and audio fields are missing;
+visual, person, enemy, hitmarker, and friendly-green signals are extracted.
 
-1. Prints do abate → `frames/kill/`; prints de "nada" → `frames/nada/`
-   (ou `--neg-recordings=400` amostra frames chatos das gravações em cache).
-2. `python studio/pipeline/imgset.py` → `studio/model/frames_dataset.csv`
-   (uma linha por print, dá pra abrir e conferir) + `.npz`.
-3. `--train` treina um `HistGradientBoosting` só nesses frames →
-   `model/scorer_frames.joblib` + `scorer_frames_meta.json` com o ROC-AUC.
+1. Place positive stills in `frames/kill/` and negatives in `frames/nada/`.
+   `--neg-recordings=400` can sample negative frames from cached recordings.
+2. Run `python studio/pipeline/imgset.py` to create local
+   `studio/model/frames_dataset.csv` and `.npz` files.
+3. `--train` fits a separate `HistGradientBoosting` image model and writes
+   `model/scorer_frames.joblib` and `scorer_frames_meta.json`. Its evaluation
+   is separate from the revised main scorer; do not conflate their metrics.
 
-### Notebook
+### Notebook and rendering boundary
 
-`studio/notebooks/modelo_elementos.ipynb` — com um clipe real do `cache/`:
-os 17 sinais base, as 52 features do `derive.augment`, a curva de interesse,
-as caixas do YOLO, os frames extremos de cada sinal, combate × caminhada, e no
-fim roda `pytest tests/pipeline`. Abra com `jupyter lab` a partir de `studio/`.
+`notebooks/modelo_elementos.ipynb` illustrates signals, YOLO boxes, extreme
+frames, combat versus walking, and interest curves using local cached media.
+It also includes test and optional training cells. Open JupyterLab from
+`studio/` and inspect training controls before running all cells. Public
+notebook outputs are cleared; the notebook itself is not a bundled dataset.
 
-O render, a identidade VieirasPlay, a grade do phonk, a mixagem e o `verify`
-continuam **inteiramente no harness** (`harness/shorts.py`, `harness/engine.py`).
-O studio só escolhe os cortes e dá play nos comandos.
-
-> `harness/shorts.py` foi ajustado (2026-09-09) para aceitar fonte de corte em
-> `gravacoes/` além da raiz (linha do "Fonte deve ser uma gameplay...") e para
-> contar a numeração `NN_` também em `cliping/*`. Tudo continua preso ao ROOT e
-> aos diretórios reservados. O plano agora sai com `output: "cliping/lote<n>"`.
+Rendering, VieirasPlay artwork, beat synchronization, mixing, and `verify`
+remain in `harness/shorts.py` and `harness/engine.py`. Studio prepares cuts and
+invokes those commands. The harness accepts `gravacoes/` sources and counts
+numbered outputs under `cliping/*`; generated plans use `cliping/lote<n>`.
+Paths remain constrained to the workspace and its reserved-directory rules.

@@ -1,5 +1,6 @@
 """Renderer derived from the user-approved Shorts 06–10. No source selection here."""
 from pathlib import Path
+from tooling import resolve_tool
 import subprocess
 from PIL import Image, ImageDraw, ImageFont
 
@@ -29,7 +30,7 @@ def artwork(plan, edit, folder):
 def render(root, plan, edit, encoder='h264_nvenc'):
     if 'music' in edit:plan={**plan,'music':edit['music']}
     if 'game' in edit:plan={**plan,'game':edit['game']}
-    ff=root/'_tools/ffmpeg.exe'; out=root/plan['output']; temp=out/'projeto/render';temp.mkdir(parents=True,exist_ok=True)
+    ff=resolve_tool('ffmpeg', root); out=root/plan['output']; temp=out/'projeto/render';temp.mkdir(parents=True,exist_ok=True)
     dest=out/(edit['name']+'.mp4')
     if dest.exists(): raise ValueError(f'Arquivo final já existe: {dest}')
     def codec(final=False):
