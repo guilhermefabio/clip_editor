@@ -165,7 +165,7 @@ def test_iter_review_frames_groups_by_embedded_sha(frames_dir):
     assert got["gt_aaaaaaaaaaaa_f0000010.jpg"] == (1, "frame:aaaaaaaaaaaa")
     assert got["gt_aaaaaaaaaaaa_f0000020.jpg"] == (1, "frame:aaaaaaaaaaaa")
     assert got["gt_bbbbbbbbbbbb_f0000000.jpg"] == (0, "frame:bbbbbbbbbbbb")
-    assert got["estranho.jpg"] == (0, "frame:estranho")
+    assert got["estranho.jpg"] == (0, "unknown:frame:estranho")
 
 
 def test_iter_review_frames_missing_dirs_is_empty(frames_dir):

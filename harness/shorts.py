@@ -1,11 +1,12 @@
 """VieirasPlay local workflow. Run from any directory; paths are relative to BODYCAM."""
 from pathlib import Path
+from tooling import resolve_tool
 from concurrent.futures import ThreadPoolExecutor
 import argparse, copy, hashlib, html, json, math, re, subprocess, sys
 import engine
 
 ROOT=Path(__file__).resolve().parents[1]
-HERE=ROOT/'harness';FF=ROOT/'_tools/ffmpeg.exe';FP=ROOT/'_tools/ffprobe.exe'
+HERE=ROOT/'harness';FF=resolve_tool('ffmpeg', ROOT);FP=resolve_tool('ffprobe', ROOT)
 def read(p): return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def save(p, data):
     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True)

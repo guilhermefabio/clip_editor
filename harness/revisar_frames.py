@@ -1,5 +1,6 @@
 """Inventário e folhas de contato; não atribui rótulos automaticamente."""
 from pathlib import Path
+from tooling import resolve_tool
 import argparse
 import hashlib
 import json
@@ -20,7 +21,7 @@ def inventory():
     entries = []
     for i, p in enumerate(sorted((ROOT / 'gravacoes').glob('*.mp4')), 1):
         data = json.loads(subprocess.check_output([
-            str(ROOT / '_tools/ffprobe.exe'), '-v', 'error', '-show_streams',
+            str(resolve_tool('ffprobe', ROOT)), '-v', 'error', '-show_streams',
             '-show_format', '-of', 'json', str(p)]))
         v = next(s for s in data['streams'] if s['codec_type'] == 'video')
         with p.open('rb') as f:

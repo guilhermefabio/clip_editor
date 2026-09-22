@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "output": "cliping/example_batch",
+  "channel": "YOUR CHANNEL",
+  "game": "BODYCAM",
+  "batch_size": 5,
+  "duration_range": [
+    20,
+    22
+  ],
+  "music": {
+    "file": "audio/your_permitted_track.wav",
+    "sha256": "REPLACE_WITH_ACTUAL_SHA256",
+    "bpm": 144,
+    "grid_offset_seconds": 0,
+    "evidence": "REPLACE: verify BPM and grid offset against your track"
+  },
+  "allow_reuse": false,
+  "edits": [
+    {
+      "name": "01_EXAMPLE",
+      "title": "EXAMPLE HIGHLIGHT",
+      "tag": "REVIEW REQUIRED",
+      "color": "#DAFF64",
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 0,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.47,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 5,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.52,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 10,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 15,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.54,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 20,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 25,
+          "beats": 8,
+          "speed": 0.75,
+          "center_x": 0.53,
+          "gamma": 1.08,
+          "replay": true,
+          "note": "Illustrative cut; inspect your source before rendering"
+        }
+      ]
+    },
+    {
+      "name": "02_EXAMPLE",
+      "title": "EXAMPLE HIGHLIGHT",
+      "tag": "REVIEW REQUIRED",
+      "color": "#FF765D",
+      "music_start": 0,
+      "cuts": [
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 60,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 65,
+          "beats": 4,
+          "speed": 1.4,
+          "center_x": 0.5,
+          "gamma": 1.22,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 70,
+          "beats": 12,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.22,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 75,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.22,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 80,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 85,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        }
+      ]
+    },
+    {
+      "name": "03_EXAMPLE",
+      "title": "EXAMPLE HIGHLIGHT",
+      "tag": "REVIEW REQUIRED",
+      "color": "#DAFF64",
+      "music_start": 3.3333333333333335,
+      "cuts": [
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 120,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 125,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 130,
+          "beats": 4,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 135,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 140,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 145,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 150,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        }
+      ]
+    },
+    {
+      "name": "04_EXAMPLE",
+      "title": "EXAMPLE HIGHLIGHT",
+      "tag": "REVIEW REQUIRED",
+      "color": "#A7DFFF",
+      "music_start": 6.666666666666667,
+      "cuts": [
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 180,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 185,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 190,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 195,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 200,
+          "beats": 12,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 205,
+          "beats": 4,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        }
+      ]
+    },
+    {
+      "name": "05_EXAMPLE",
+      "title": "EXAMPLE HIGHLIGHT",
+      "tag": "REVIEW REQUIRED",
+      "color": "#DAFF64",
+      "music_start": 10,
+      "cuts": [
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 240,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 245,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.47,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 250,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 255,
+          "beats": 8,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 260,
+          "beats": 4,
+          "speed": 1,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": false,
+          "note": "Illustrative cut; inspect your source before rendering"
+        },
+        {
+          "file": "gravacoes/your_recording.mp4",
+          "start": 265,
+          "beats": 12,
+          "speed": 0.65,
+          "center_x": 0.5,
+          "gamma": 1.08,
+          "replay": true,
+          "note": "Illustrative cut; inspect your source before rendering"
+        }
+      ]
+    }
+  ]
+}
